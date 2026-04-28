@@ -523,6 +523,7 @@ body.dark .log-reason { color: #8aacbf !important; }
   </div>
   <div class="gs-header-right">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙 Dark</button>
+    <div id="syncIndicator" style="display:flex;align-items:center;padding:0 4px"></div>
     <span class="super-admin-badge" id="superAdminBadge" style="display:none">★ Super Admin</span>
     <span class="admin-badge" id="adminBadge" style="display:none">⚙ Admin Mode</span>
     <button class="btn btn-secondary" id="adminToggleBtn" onclick="toggleAdmin()">Enter Admin Mode</button>
@@ -855,62 +856,154 @@ let state = {
 };
 
 // ─── INIT ────────────────────────────────────────────────────────
-function initState() {
+// ─── GITHUB SYNC ─────────────────────────────────────────────────
+const GH_TOKEN = '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';
+const GH_OWNER = 'cbabs07';
+const GH_REPO  = 'internal-toolbox';
+const GH_FILE  = 'toolbox-data.json';
+const GH_API   = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+
+let ghFileSha = null;
+let syncStatus = 'idle';
+
+function setSyncStatus(status, msg) {
+  syncStatus = status;
+  const el = document.getElementById('syncIndicator');
+  if (!el) return;
+  const map = {
+    idle:    { icon: '☁️',  text: 'Synced',    color: '#85c441' },
+    loading: { icon: '⏳',  text: 'Loading…',  color: '#aec9db' },
+    saving:  { icon: '💾',  text: 'Saving…',   color: '#ed7c2e' },
+    saved:   { icon: '✅',  text: 'Saved',     color: '#85c441' },
+    error:   { icon: '⚠️',  text: msg||'Sync error', color: '#e74c3c' },
+    offline: { icon: '📴',  text: 'Offline — cached', color: '#ed7c2e' },
+  };
+  const s = map[status] || map.idle;
+  el.innerHTML = `<span style="color:${s.color};font-size:0.78rem;display:flex;align-items:center;gap:4px">${s.icon} ${s.text}</span>`;
+}
+
+async function ghFetch(method, body) {
+  const opts = {
+    method,
+    headers: {
+      'Authorization': `token ${GH_TOKEN}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.github.v3+json',
+    },
+  };
+  if (body) opts.body = JSON.stringify(body);
+  return fetch(GH_API, opts);
+}
+
+async function loadFromGitHub() {
+  setSyncStatus('loading');
+  try {
+    const res = await ghFetch('GET');
+    if (!res.ok) throw new Error(`GitHub GET failed: ${res.status}`);
+    const json = await res.json();
+    ghFileSha = json.sha;
+    const data = JSON.parse(atob(json.content.replace(/\n/g,'')));
+    state.l1s       = data.l1s       || state.l1s;
+    state.logs      = data.logs      || state.logs;
+    state.favorites = data.favorites || state.favorites;
+    runMigrations();
+    cacheLocally();
+    setSyncStatus('idle');
+    return true;
+  } catch(e) {
+    console.warn('GitHub load failed, falling back to localStorage:', e);
+    setSyncStatus('offline');
+    loadFromLocalCache();
+    return false;
+  }
+}
+
+async function saveToGitHub() {
+  setSyncStatus('saving');
+  const payload = { l1s: state.l1s, logs: state.logs, favorites: state.favorites };
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+  const body = {
+    message: `Update toolbox data — ${nowEST()}`,
+    content,
+    ...(ghFileSha ? { sha: ghFileSha } : {}),
+  };
+  try {
+    const res = await ghFetch('PUT', body);
+    if (!res.ok) {
+      const err = await res.json();
+      if (res.status === 409 || (err.message && err.message.includes('sha'))) {
+        await refreshSha();
+        body.sha = ghFileSha;
+        const retry = await ghFetch('PUT', body);
+        if (!retry.ok) throw new Error('Retry failed');
+        const retryJson = await retry.json();
+        ghFileSha = retryJson.content.sha;
+      } else {
+        throw new Error(`PUT failed: ${res.status}`);
+      }
+    } else {
+      const json = await res.json();
+      ghFileSha = json.content.sha;
+    }
+    cacheLocally();
+    setSyncStatus('saved');
+    setTimeout(() => setSyncStatus('idle'), 2500);
+  } catch(e) {
+    console.error('GitHub save failed:', e);
+    setSyncStatus('error', 'Save failed — cached locally');
+    cacheLocally();
+  }
+}
+
+async function refreshSha() {
+  try {
+    const res = await ghFetch('GET');
+    if (res.ok) { const j = await res.json(); ghFileSha = j.sha; }
+  } catch(e) {}
+}
+
+function cacheLocally() {
+  try { localStorage.setItem('toolbox_v2', JSON.stringify({ l1s: state.l1s, logs: state.logs, favorites: state.favorites })); } catch(e) {}
+}
+
+function loadFromLocalCache() {
   const saved = localStorage.getItem('toolbox_v2');
   if (saved) {
     try {
-      const parsed = JSON.parse(saved);
-      // Only restore data — never restore login/admin session
-      state.l1s = parsed.l1s || state.l1s;
-      state.logs = parsed.logs || state.logs;
-      state.favorites = parsed.favorites || state.favorites;
-      // Migration: rename "Training Material" → "Documentation"
-      let migrated = false;
-      state.l1s.forEach(l1 => (l1.subcategories||[]).forEach(l2 => (l2.sections||[]).forEach(sec => {
-        if (sec.name === 'Training Material') { sec.name = 'Documentation'; migrated = true; }
-      })));
-      if (migrated) saveState();
-      return;
-    } catch(e) {}
+      const p = JSON.parse(saved);
+      state.l1s       = p.l1s       || state.l1s;
+      state.logs      = p.logs      || state.logs;
+      state.favorites = p.favorites || state.favorites;
+      runMigrations();
+    } catch(e) { buildDefaultState(); }
+  } else {
+    buildDefaultState();
   }
-  // Build from defaults
+}
+
+function runMigrations() {
+  state.l1s.forEach(l1 => (l1.subcategories||[]).forEach(l2 => (l2.sections||[]).forEach(sec => {
+    if (sec.name === 'Training Material') sec.name = 'Documentation';
+  })));
+}
+
+function buildDefaultState() {
   state.l1s = DEFAULT_DATA.map(l1 => {
     const l1id = uid();
-    const subs = (l1.subcategories || []).map(sub => {
-      const l2id = uid();
-      return {
-        id: l2id, name: sub.name,
-        sections: DEFAULT_SECTIONS.map(s => ({ id: uid(), name: s, items: [] }))
-      };
-    });
+    const subs = (l1.subcategories||[]).map(sub => ({
+      id: uid(), name: sub.name,
+      sections: DEFAULT_SECTIONS.map(s => ({ id: uid(), name: s, items: [] }))
+    }));
     return { id: l1id, name: l1.name, subcategories: subs };
   });
-  saveState();
+}
+
+function initState() {
+  buildDefaultState(); // defaults first; GitHub load will override on boot
 }
 
 function saveState() {
-  const payload = { l1s: state.l1s, logs: state.logs, favorites: state.favorites };
-  try {
-    localStorage.setItem('toolbox_v2', JSON.stringify(payload));
-  } catch(e) {
-    // Quota exceeded — strip base64 images from descriptions and try again
-    try {
-      const stripped = JSON.parse(JSON.stringify(payload));
-      stripped.l1s.forEach(l1 => (l1.subcategories||[]).forEach(l2 => (l2.sections||[]).forEach(sec => (sec.items||[]).forEach(item => {
-        if (item.desc && item.desc.includes('base64')) {
-          const div = document.createElement('div');
-          div.innerHTML = item.desc;
-          div.querySelectorAll('img[src^="data:"]').forEach(img => img.remove());
-          item.desc = div.innerHTML;
-          item._imagesStripped = true;
-        }
-      }))));
-      localStorage.setItem('toolbox_v2', JSON.stringify(stripped));
-      showToast('⚠ Storage limit reached — screenshots were not saved. Consider using external image links.', 'warning');
-    } catch(e2) {
-      console.error('Save failed:', e2);
-    }
-  }
+  saveToGitHub();
 }
 
 function uid() { return '_' + Math.random().toString(36).substr(2,9); }
@@ -1820,8 +1913,7 @@ function escHtml(str) { if(!str) return ''; return String(str).replace(/&/g,'&am
 
 // ─── BOOT ────────────────────────────────────────────────────────
 initState();
-// Clear any corrupted password store from previous sessions
-try { const t = getPasswords(); } catch(e) { localStorage.removeItem('toolbox_passwords'); }
+try { getPasswords(); } catch(e) { localStorage.removeItem('toolbox_passwords'); }
 applyTheme();
 document.getElementById('adminToggleBtn').style.display = 'none';
 renderNav();
@@ -1829,6 +1921,13 @@ renderAdminLogsNav();
 renderFavorites();
 if (state.favorites.length) { favOpen=true; document.getElementById('favList').style.display=''; document.getElementById('favToggleIcon').classList.add('open'); }
 setTimeout(() => document.getElementById('loginEmail').focus(), 100);
+
+// Load live data from GitHub (async — UI is already interactive from defaults/cache)
+loadFromGitHub().then(() => {
+  renderNav();
+  renderFavorites();
+  if (state.favorites.length) { favOpen=true; document.getElementById('favList').style.display=''; document.getElementById('favToggleIcon').classList.add('open'); }
+});
 </script>
 </body>
 </html>
