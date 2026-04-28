@@ -1,5 +1,789 @@
 {
-  "l1s": [],
-  "logs": [],
-  "favorites": []
+  "l1s": [
+    {
+      "id": "_svk15jwvc",
+      "name": "General",
+      "subcategories": [
+        {
+          "id": "_daoe8omuz",
+          "name": "Internal",
+          "sections": [
+            {
+              "id": "_tjt2gmfpe",
+              "name": "Internal Tools",
+              "items": [
+                {
+                  "id": "_56nbtha2r",
+                  "title": "View a Workspace",
+                  "link": "https://www.greenshadesonline.com/internal/Workspaces.aspx",
+                  "desc": "<div>This tools allows you to access and/or search for a workspace.</div><div><br></div><div>A workspace can be accessed by entering the&nbsp;<span style=\"font-size: 14.08px;\">Workspace ID (WSID)</span><span style=\"font-size: 0.88rem;\">, along with the reason for accessing the workspace and selecting continue. If the user has permission, the user will be redirected to the client&#39;s workspace as a super administrator.</span></div><div><span style=\"font-size: 0.88rem;\"><br></span></div><div>A workspace can all be accessed by searching based off a number of options and selecting the Access button. When selecting access, the user will be redirected to a page requesting the reason for&nbsp;<span style=\"font-size: 14.08px;\">accessing the workspace before selecting continue.&nbsp;</span><span style=\"font-size: 14.08px;\">If the user has permission, the user will be then redirected to the client&#39;s workspace as a super administrator.</span></div><div><span style=\"font-size: 14.08px;\"><br></span></div><div><span style=\"font-size: 14.08px;\">Outside of accessing a workspace, this page can also provide useful information and allow users to View Details for a workspace entered in the search bar. These details include active modules, check count per check date, as well as a list of admins.</span></div>",
+                  "demoLink": "",
+                  "config": "",
+                  "inProgress": false,
+                  "hiddenFields": [
+                    "demo",
+                    "config",
+                    "kb"
+                  ],
+                  "kbArticles": [],
+                  "lastUpdated": "04/27/2026, 06:49:32 PM"
+                },
+                {
+                  "id": "_8kahzhm0r",
+                  "title": "Impersonate an Admin",
+                  "link": "",
+                  "desc": "",
+                  "demoLink": "",
+                  "config": "",
+                  "inProgress": true,
+                  "hiddenFields": [],
+                  "kbArticles": [],
+                  "lastUpdated": "04/27/2026, 07:11:15 PM"
+                }
+              ]
+            },
+            {
+              "id": "_copfejb92",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_a62gn50is",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "_spoi3po35",
+      "name": "Products",
+      "subcategories": [
+        {
+          "id": "_f2nwieub2",
+          "name": "Connector",
+          "sections": [
+            {
+              "id": "_npootalkl",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_g5trpudwm",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_hr5kxpx0d",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_7a2ng6soo",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_xewa5wo0x",
+          "name": "DPI",
+          "sections": [
+            {
+              "id": "_fzbjltlci",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_o2kr1k0ni",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_kxt7i1qfc",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_3wf7f8si5",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_hncrb5pss",
+          "name": "Documents",
+          "sections": [
+            {
+              "id": "_khxgexj09",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_ctsbr60b6",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_c46p37q2g",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_ltxwib827",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_xq12etsrp",
+          "name": "Garnishments",
+          "sections": [
+            {
+              "id": "_f7fve3gur",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_sk1fff0e1",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_9bbd3u0fq",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_67xyhldzt",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_rqg7u9v65",
+          "name": "GoTFC",
+          "sections": [
+            {
+              "id": "_0he0yk3xi",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_6kwsjigc8",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_8xfe9veyi",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_tzhk9guut",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_kez4i7n12",
+          "name": "PTS",
+          "sections": [
+            {
+              "id": "_pj2v1uhcg",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_ithuzp5un",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_p4txue6lh",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_1nlcxluxw",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_rwjju8uho",
+          "name": "Payroll",
+          "sections": [
+            {
+              "id": "_y6toz4l7k",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_xpeptaw66",
+              "name": "Internal Tools",
+              "items": [
+                {
+                  "id": "_mgu3ky2us",
+                  "title": "Custom Wage Type Request",
+                  "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=2f602e12-70a7-eb11-b1ac-000d3a3b2bd4",
+                  "desc": "",
+                  "demoLink": "https://greenshades.sharepoint.com/sites/Product/_layouts/15/stream.aspx?id=%2Fsites%2FProduct%2FShared%20Documents%2FSustainability%2FKnowledge%20Share%2FCustom%20Wage%20Type%20Details%2FCustom%20Wage%20Tax%20Details%20Demo%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9337e941%2Df99c%2D4ee1%2Db49e%2Da8805b8909fd",
+                  "config": "",
+                  "inProgress": true,
+                  "hiddenFields": [
+                    "kb",
+                    "config"
+                  ],
+                  "kbArticles": [],
+                  "lastUpdated": "04/28/2026, 12:03:20 PM"
+                }
+              ]
+            },
+            {
+              "id": "_3lbp8lkd2",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_kfum570v9",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_oz55aabyi",
+          "name": "SSO",
+          "sections": [
+            {
+              "id": "_fau2pmouz",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_rzte4zdzj",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_89j4u40h8",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_5wpsadk8i",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_ow7oykhmg",
+          "name": "Sync Portal",
+          "sections": [
+            {
+              "id": "_51r0jj2w3",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_rr7buugym",
+              "name": "Internal Tools",
+              "items": [
+                {
+                  "id": "_aacdf5x77",
+                  "title": "Payroll Migration Tool",
+                  "link": "https://internalweb.greenshadesonline.com/syncs/payroll",
+                  "desc": "This tool allows a user to initiate a Payroll Data Migration  task.",
+                  "demoLink": "",
+                  "config": "",
+                  "inProgress": false,
+                  "hiddenFields": [
+                    "config",
+                    "demo"
+                  ],
+                  "kbArticles": [
+                    {
+                      "name": "Payroll: Request BETA (or Test) Workspace and/or PDM",
+                      "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&pagetype=entityrecord&etn=knowledgearticle&id=7e811b70-adce-4fc6-b53e-7935b335dc07"
+                    },
+                    {
+                      "name": "Sync Portal: Issues with Payroll Data Migration (PDM)",
+                      "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=099d1361-d638-43e8-bbbb-b0e9e2df83ba"
+                    }
+                  ],
+                  "lastUpdated": "04/28/2026, 01:25:08 PM",
+                  "perms": "This tool requires specific permissions to use - TPE/QA, Dev, <i>TBD</i>"
+                }
+              ]
+            },
+            {
+              "id": "_mm4c0t25l",
+              "name": "Configurable Settings",
+              "items": [
+                {
+                  "id": "_wx56wvzn2",
+                  "title": "Sync Start Date",
+                  "link": "",
+                  "desc": "This configuration allows a user to specify a date in which the sync should look back from.",
+                  "demoLink": "",
+                  "config": "To request this setting, please send up a case with the below information.",
+                  "inProgress": false,
+                  "hiddenFields": [
+                    "demo"
+                  ],
+                  "kbArticles": [
+                    {
+                      "name": "TBD..",
+                      "link": ""
+                    }
+                  ],
+                  "lastUpdated": "04/27/2026, 07:08:28 PM"
+                }
+              ]
+            },
+            {
+              "id": "_qn1d85jad",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_k1uo2cs5o",
+          "name": "TFC On-Prem",
+          "sections": [
+            {
+              "id": "_98z002t10",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_hbp0043u4",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_ouwxtumcb",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_grn9m8wm4",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_1unlr0vr6",
+          "name": "Time Off",
+          "sections": [
+            {
+              "id": "_iei3s8mot",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_10qddplan",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_pvmqr1wke",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_0yz1e3m6w",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_82rimwfoa",
+          "name": "Timesheets",
+          "sections": [
+            {
+              "id": "_g4ueabvxf",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_ut8iog34i",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_wd4v7if86",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_oallcnfxl",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_iy3hw2sog",
+          "name": "YEF",
+          "sections": [
+            {
+              "id": "_193dvmnyj",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_48204yia0",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_5rsnwm3op",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_bs4dw88ql",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "_dudtcfeg1",
+      "name": "Departments",
+      "subcategories": [
+        {
+          "id": "_i7zf6t1j4",
+          "name": "Company",
+          "sections": [
+            {
+              "id": "_mopm5a2s9",
+              "name": "Internal Tools",
+              "items": [
+                {
+                  "id": "_6mmiu6zv2",
+                  "title": "ExamBuilder",
+                  "link": "https://testing.exambuilder.com/login",
+                  "desc": "Log in to ExamBuilder to access Demo-Palooza content.",
+                  "demoLink": "",
+                  "config": "",
+                  "inProgress": false,
+                  "hiddenFields": [
+                    "config",
+                    "demo",
+                    "kb"
+                  ],
+                  "kbArticles": [],
+                  "lastUpdated": "04/27/2026, 09:07:16 PM"
+                }
+              ]
+            },
+            {
+              "id": "_zpgi1r5og",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_4xiyhah2y",
+          "name": "Development",
+          "sections": [
+            {
+              "id": "_2hp6ydquk",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_0j8eh2lm3",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_hbyv60q4v",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_o59pts90l",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_tji1z3jdn",
+          "name": "Sales",
+          "sections": [
+            {
+              "id": "_7tccepdhi",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_l42zzkque",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_c5fg72x9s",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_aa6znl6sl",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_fy9apj6lb",
+          "name": "Support",
+          "sections": [
+            {
+              "id": "_n30f80mz4",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_r1psuk8eu",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_swrz3foug",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_xbm939xtk",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_lc0n4489m",
+          "name": "TPE",
+          "sections": [
+            {
+              "id": "_c99wjw6cx",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_lcrnaskng",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_b2f96ssm8",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_5011uf12e",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "logs": [
+    {
+      "id": "_aq73xq88h",
+      "datetime": "04/28/2026, 01:25:08 PM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "Payroll Migration Tool (Products > Sync Portal > Internal Tools)",
+      "reason": "Updating the permissions"
+    },
+    {
+      "id": "_wnufu5xlg",
+      "datetime": "04/28/2026, 01:03:47 PM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Main Category",
+      "action": "edited",
+      "title": "Department to Departments",
+      "reason": "Testing"
+    },
+    {
+      "id": "_uvjusy1b7",
+      "datetime": "04/28/2026, 01:03:26 PM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Main Category",
+      "action": "edited",
+      "title": "Departments to Department",
+      "reason": "Test"
+    },
+    {
+      "id": "_jdkkfibpa",
+      "datetime": "04/28/2026, 12:03:20 PM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "subsection",
+      "action": "edited",
+      "title": "Custom Wage Type Request (Products > Payroll > Internal Tools)",
+      "reason": "Updating link"
+    },
+    {
+      "id": "_1h1zvp971",
+      "datetime": "04/28/2026, 12:02:09 PM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "subsection",
+      "action": "added",
+      "title": "Custom Wage Type Request (Products > Payroll > Internal Tools)",
+      "reason": ""
+    },
+    {
+      "id": "_v5a1mlds8",
+      "datetime": "04/27/2026, 09:08:37 PM",
+      "user": "Admin",
+      "type": "section",
+      "action": "removed",
+      "title": "Configurable Settings (Departments > Company)",
+      "reason": "Not applicable for this category"
+    },
+    {
+      "id": "_3sowuu5xz",
+      "datetime": "04/27/2026, 09:07:16 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "edited",
+      "title": "ExamBuilder (Departments > Company > Internal Tools)",
+      "reason": ""
+    },
+    {
+      "id": "_f1mmlt8gi",
+      "datetime": "04/27/2026, 09:07:04 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "edited",
+      "title": "ExamBuilder (Departments > Company > Internal Tools)",
+      "reason": "Updating title"
+    },
+    {
+      "id": "_28wipdzh2",
+      "datetime": "04/27/2026, 09:06:46 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "added",
+      "title": "Exam Builder (Departments > Company > Internal Tools)",
+      "reason": ""
+    },
+    {
+      "id": "_vyfr1pzw3",
+      "datetime": "04/27/2026, 07:51:23 PM",
+      "user": "Admin",
+      "type": "section",
+      "action": "removed",
+      "title": "Training Material (Departments > Company)",
+      "reason": "Not applicable to this category"
+    },
+    {
+      "id": "_zsqkx5tpm",
+      "datetime": "04/27/2026, 07:50:01 PM",
+      "user": "Admin",
+      "type": "l2",
+      "action": "added",
+      "title": "Company (in Departments)",
+      "reason": ""
+    },
+    {
+      "id": "_5el6vfewy",
+      "datetime": "04/27/2026, 07:11:15 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "added",
+      "title": "Impersonate an Admin (General > Internal > Internal Tools)",
+      "reason": ""
+    },
+    {
+      "id": "_oxhtghn2g",
+      "datetime": "04/27/2026, 07:08:28 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "edited",
+      "title": "Sync Start Date (Products > Sync Portal > Configurable Settings)",
+      "reason": "Updating the formatting"
+    },
+    {
+      "id": "_ilpngs9sm",
+      "datetime": "04/27/2026, 07:04:32 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "added",
+      "title": "Sync Start Date (Products > Sync Portal > Configurable Settings)",
+      "reason": ""
+    },
+    {
+      "id": "_1cytxabeq",
+      "datetime": "04/27/2026, 06:50:20 PM",
+      "user": "Admin",
+      "type": "section",
+      "action": "removed",
+      "title": "Training Material (General > Internal)",
+      "reason": "Does not currently fit with this category - may add it back at a later date if needed"
+    },
+    {
+      "id": "_dwy6tqvna",
+      "datetime": "04/27/2026, 06:49:32 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "added",
+      "title": "View a Workspace (General > Internal > Internal Tools)",
+      "reason": ""
+    },
+    {
+      "id": "_4fzvwp3bo",
+      "datetime": "04/27/2026, 06:34:28 PM",
+      "user": "Admin",
+      "type": "l2",
+      "action": "added",
+      "title": "Internal (in General)",
+      "reason": ""
+    },
+    {
+      "id": "_hpg41q8ol",
+      "datetime": "04/27/2026, 05:44:16 PM",
+      "user": "Admin",
+      "type": "subsection",
+      "action": "added",
+      "title": "Payroll Migration Tool (Products > Sync Portal > Internal Tools)",
+      "reason": ""
+    }
+  ],
+  "favorites": [
+    {
+      "l1Id": "_dudtcfeg1",
+      "l2Id": "_i7zf6t1j4",
+      "secId": "_mopm5a2s9",
+      "itemId": "_6mmiu6zv2",
+      "title": "ExamBuilder"
+    },
+    {
+      "l1Id": "_svk15jwvc",
+      "l2Id": "_daoe8omuz",
+      "secId": "_tjt2gmfpe",
+      "itemId": "_56nbtha2r",
+      "title": "View a Workspace"
+    }
+  ]
 }
