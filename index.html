@@ -899,7 +899,10 @@ async function loadFromGitHub() {
   setSyncStatus('loading');
   try {
     const res = await ghFetch('GET');
-    if (!res.ok) throw new Error(`GitHub GET failed: ${res.status}`);
+    if (!res.ok) {
+      const errBody = await res.json().catch(() => ({}));
+      throw new Error(`GitHub GET ${res.status}: ${errBody.message || res.statusText}`);
+    }
     const json = await res.json();
     ghFileSha = json.sha;
     const data = JSON.parse(atob(json.content.replace(/\n/g,'')));
@@ -911,8 +914,8 @@ async function loadFromGitHub() {
     setSyncStatus('idle');
     return true;
   } catch(e) {
-    console.warn('GitHub load failed, falling back to localStorage:', e);
-    setSyncStatus('offline');
+    console.error('GitHub load failed:', e.message);
+    setSyncStatus('error', e.message.substring(0, 40));
     loadFromLocalCache();
     return false;
   }
