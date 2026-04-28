@@ -28,7 +28,19 @@ jobs:
         run: |
           mkdir -p dist
           sed "s|%%TOOLBOX_TOKEN%%|${{ secrets.TOOLBOX_TOKEN }}|g" index.html > dist/index.html
-          cp toolbox-data.json dist/toolbox-data.json
+
+      - name: Fetch live data file (preserve runtime data)
+        run: |
+          # Try to fetch the live data file from the deployed site
+          # If it doesn't exist yet, fall back to the one in the repo
+          HTTP_STATUS=$(curl -s -o dist/toolbox-data.json -w "%{http_code}" \
+            "https://cbabs07.github.io/internal-toolbox/toolbox-data.json")
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "Live data not found (status $HTTP_STATUS), using repo copy"
+            cp toolbox-data.json dist/toolbox-data.json
+          else
+            echo "Live data fetched successfully"
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
