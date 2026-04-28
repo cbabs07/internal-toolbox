@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Toolbox — Greenshades</title>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gs-navy: #062a47;
+  --gs-green: #85c441;
+  --gs-green-dark: #0a8944;
+  --gs-charcoal: #2f2f2f;
+  --gs-teal: #0d9389;
+  --gs-orange: #ed7c2e;
+  --gs-warm-gray: #ede6dd;
+  --gs-sage: #cbe3aa;
+  --gs-white: #ffffff;
+  --gs-border: #d0d0d0;
+  --sidebar-w: 300px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans Pro', 'Segoe UI', Arial, sans-serif;
+  font-size: 14px; color: var(--gs-charcoal);
+  background: #f4f6f8; height: 100vh; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+
+/* DANCING TOOLBOX */
+.dancing-toolbox {
+  display: inline-block;
+  animation: toolbox-dance 1.6s ease-in-out infinite;
+  transform-origin: bottom center;
+  margin-right: 5px;
+  font-style: normal;
+  filter: sepia(1) saturate(5) hue-rotate(63deg) brightness(0.95);
+}
+@keyframes toolbox-dance {
+  0%,100% { transform: rotate(0deg) translateY(0); }
+  15%  { transform: rotate(-14deg) translateY(-2px); }
+  30%  { transform: rotate(11deg) translateY(-3px); }
+  45%  { transform: rotate(-8deg) translateY(-1px); }
+  60%  { transform: rotate(7deg) translateY(-2px); }
+  75%  { transform: rotate(-4deg) translateY(-1px); }
+  90%  { transform: rotate(2deg) translateY(0); }
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  background: none; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px; cursor: pointer; color: rgba(255,255,255,0.75);
+  font-size: 0.8rem; padding: 4px 10px; display: flex; align-items: center; gap: 5px;
+  transition: all 0.15s; white-space: nowrap; flex-shrink: 0;
+}
+.theme-toggle:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.4); }
+
+/* DARK THEME */
+body.dark {
+  background: #0f1e2a; color: #d0dce8;
+}
+body.dark .main-content { background: #0f1e2a; }
+body.dark .gs-header { background: #020f18; border-bottom-color: var(--gs-green); }
+body.dark .sidebar { background: #020f18; border-right-color: rgba(255,255,255,0.06); }
+body.dark .fav-section { border-bottom-color: rgba(255,255,255,0.07); }
+body.dark .sidebar-search { background: rgba(0,0,0,0.3); border-bottom-color: rgba(255,255,255,0.05); }
+body.dark .tool-detail { background: #1a2733; border-color: #2e4055; }
+body.dark .tool-detail-header { border-bottom-color: #2e4055; }
+body.dark .detail-label { color: #85c441; }
+body.dark .desc-rendered { color: #c8d8e8; }
+body.dark .desc-rendered * { color: inherit !important; }
+body.dark .desc-rendered a { color: var(--gs-teal) !important; }
+body.dark .desc-rendered a:hover { color: var(--gs-green) !important; }
+body.dark .detail-empty { color: #4a6070; }
+body.dark .detail-footer { background: #1a2733; border-color: #2e4055; }
+body.dark .detail-footer-text { color: #8aacbf; }
+body.dark .kb-article-item { background: #1e2c38; border-color: #2e4055; }
+body.dark td { border-bottom-color: #2e4055; color: #c8d8e8; }
+body.dark tr:nth-child(even) td { background: #1e2c38; }
+body.dark tr:hover td { background: #243545; }
+body.dark .modal { background: #1a2733; }
+body.dark .modal-body { background: #1a2733; color: #d0dce8; }
+body.dark .modal-footer { background: #1a2733; border-top-color: #2e4055; }
+body.dark label { color: #a8c4d8; }
+body.dark input[type=text], body.dark input[type=url], body.dark input[type=password], body.dark textarea, body.dark select { background: #0f1e2a; border-color: #2e4055; color: #d0dce8; }
+body.dark input:focus, body.dark textarea:focus, body.dark select:focus { border-color: var(--gs-green); box-shadow: 0 0 0 2px rgba(133,196,65,0.12); }
+body.dark .desc-editor-toolbar { background: #1e2c38; border-bottom-color: #2e4055; }
+body.dark .desc-toolbar-btn { color: #a8c4d8; }
+body.dark .desc-toolbar-btn:hover { background: #2e4055; color: #fff; }
+body.dark .desc-toolbar-sep { background: #2e4055; }
+body.dark .desc-editor { background: #0f1e2a; color: #d0dce8; }
+body.dark .desc-editor-wrap { border-color: #2e4055; }
+body.dark .desc-drop-zone { background: #1a2733; border-color: #2e4055; color: #5a7a8a; }
+body.dark .page-header { border-bottom-color: #2e4055; }
+body.dark .page-header h1 { color: #d0dce8; }
+body.dark .field-toggle-btn { border-color: #2e4055; color: #5a7a8a; }
+body.dark .welcome-state h2 { color: #d0dce8; }
+body.dark .screenshot-item { background: #1a2733; border-color: #2e4055; }
+body.dark .confirm-text, body.dark .unsaved-msg { color: #c8d8e8; }
+body.dark .unsaved-sub { color: #6a8a9a; }
+body.dark .kb-add-btn { border-color: #2e4055; color: #5a7a8a; }
+body.dark .kb-add-btn:hover { border-color: var(--gs-green); color: var(--gs-green); }
+body.dark .login-card { background: #1a2733; }
+body.dark .login-card-body label { color: #a8c4d8; }
+body.dark .login-card-body input { background: #0f1e2a; border-color: #2e4055; color: #d0dce8; }
+body.dark .login-error { color: #ff8888; }
+body.dark .l4-name { color: #a8c4d8; }
+body.dark .tool-detail-title { color: #e0ecf8; }
+body.dark .breadcrumb span { color: #3a5a6a; }
+body.dark .fav-btn:hover { background: #2a2a1a; }
+body.dark .field-hidden-notice { background: #2a1a0a; border-color: #6a3a0a; }
+
+/* SUPER ADMIN PASSWORD MANAGER */
+.pw-manager-section { background: #f8f9fa; border: 1px solid var(--gs-border); border-radius: 6px; padding: 20px; margin-bottom: 16px; }
+.pw-manager-section h3 { font-family: 'PT Serif', Georgia, serif; font-size: 0.95rem; color: var(--gs-navy); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--gs-border); }
+body.dark .pw-manager-section { background: #1a2733; border-color: #2e4055; }
+body.dark .pw-manager-section h3 { color: #85c441; border-bottom-color: #2e4055; }
+
+/* SUPER ADMIN BADGE */
+.super-admin-badge { background: linear-gradient(135deg, #7b2ff7, #c41e8a); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 3px 9px; border-radius: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+/* FIX LOG FILTER FLICKER - use event delegation instead of re-render on input */
+.log-col-filter { transition: none; }
+
+/* HEADER */
+.gs-header {
+  background: var(--gs-navy); border-bottom: 3px solid var(--gs-green);
+  padding: 0 20px; height: 56px; display: flex; align-items: center;
+  justify-content: space-between; flex-shrink: 0; z-index: 100;
+}
+.gs-header-left { display: flex; align-items: center; gap: 20px; }
+.gs-logo { display: flex; align-items: center; }
+.gs-logo-g { font-family: 'PT Serif', Georgia, serif; font-weight: 700; font-size: 1.4rem; color: var(--gs-green); }
+.gs-logo-text { font-family: 'PT Serif', Georgia, serif; font-weight: 700; font-size: 1.4rem; color: #fff; }
+.gs-tool-name { font-family: 'PT Serif', Georgia, serif; font-size: 1rem; color: #aec9db; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 20px; }
+.gs-header-right { display: flex; align-items: center; gap: 10px; }
+.admin-badge { background: var(--gs-orange); color: #fff; font-size: 0.72rem; font-weight: 700; padding: 3px 9px; border-radius: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
+.btn { border: none; cursor: pointer; border-radius: 4px; font-family: 'Source Sans Pro', Arial, sans-serif; font-weight: 600; font-size: 0.82rem; padding: 6px 14px; transition: background 0.15s, opacity 0.15s; }
+.btn-primary { background: var(--gs-green-dark); color: #fff; }
+.btn-primary:hover { background: var(--gs-green); }
+.btn-secondary { background: rgba(255,255,255,0.12); color: #fff; }
+.btn-secondary:hover { background: rgba(255,255,255,0.22); }
+.btn-danger { background: #c0392b; color: #fff; }
+.btn-danger:hover { background: #a93226; }
+.btn-sm { padding: 4px 10px; font-size: 0.78rem; }
+
+/* LAYOUT */
+.app-body { display: flex; flex: 1; overflow: hidden; }
+
+/* SIDEBAR */
+.sidebar {
+  width: var(--sidebar-w); background: var(--gs-navy);
+  display: flex; flex-direction: column; flex-shrink: 0;
+  overflow: hidden; border-right: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-top {
+  flex-shrink: 0;
+}
+.sidebar-nav {
+  flex: 1; overflow-y: auto; padding: 4px 0 12px;
+}
+.sidebar-nav::-webkit-scrollbar { width: 4px; }
+.sidebar-nav::-webkit-scrollbar-track { background: transparent; }
+.sidebar-nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+/* FAVORITES */
+.fav-section { border-bottom: 1px solid rgba(255,255,255,0.1); }
+.fav-header { display: flex; align-items: center; gap: 6px; padding: 9px 14px 7px; cursor: pointer; user-select: none; }
+.fav-toggle-icon { color: rgba(255,255,255,0.4); font-size: 0.6rem; transition: transform 0.2s; flex-shrink: 0; }
+.fav-toggle-icon.open { transform: rotate(90deg); }
+.fav-title { font-size: 0.7rem; font-weight: 700; color: var(--gs-sage); text-transform: uppercase; letter-spacing: 1px; flex: 1; }
+.fav-count { background: rgba(133,196,65,0.25); color: var(--gs-green); font-size: 0.65rem; font-weight: 700; padding: 1px 6px; border-radius: 8px; }
+.fav-item { display: flex; align-items: center; padding: 5px 10px 5px 22px; cursor: pointer; color: #c5dae8; font-size: 0.82rem; transition: background 0.1s; }
+.fav-item:hover { background: rgba(255,255,255,0.07); color: #fff; }
+.fav-item.active { color: var(--gs-green); background: rgba(133,196,65,0.12); }
+.fav-star { color: #f5c842; font-size: 0.7rem; flex-shrink: 0; margin-right: 6px; }
+.fav-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.3; }
+.fav-reorder { display: none; flex-direction: column; gap: 1px; }
+.fav-item:hover .fav-reorder { display: flex; }
+.fav-reorder-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 0.6rem; padding: 0 3px; line-height: 1; }
+.fav-reorder-btn:hover { color: #fff; }
+.fav-remove-btn { display: none; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 0.75rem; padding: 2px 4px; }
+.fav-item:hover .fav-remove-btn { display: block; }
+.fav-remove-btn:hover { color: #ff7b7b; }
+.fav-empty { padding: 4px 14px 8px 22px; font-size: 0.75rem; color: rgba(255,255,255,0.22); font-style: italic; }
+
+/* SIDEBAR SEARCH */
+.sidebar-search { padding: 8px 10px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.07); }
+.sidebar-search input { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 5px 9px; color: #fff; font-size: 0.8rem; outline: none; }
+.sidebar-search input::placeholder { color: rgba(255,255,255,0.3); }
+.sidebar-search input:focus { border-color: var(--gs-green); background: rgba(255,255,255,0.12); }
+
+/* MAIN CATEGORY (L1) */
+.l1-item {
+  display: flex; align-items: center; gap: 7px;
+  padding: 9px 12px 9px 10px; cursor: pointer; user-select: none;
+  color: #fff; font-size: 0.88rem; font-weight: 700;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.12s;
+}
+.l1-item:hover { background: rgba(255,255,255,0.05); }
+.l1-chevron { color: rgba(255,255,255,0.4); font-size: 0.62rem; transition: transform 0.2s; flex-shrink: 0; }
+.l1-chevron.open { transform: rotate(90deg); }
+.l1-name { flex: 1; }
+.l1-actions { display: none; gap: 3px; }
+.l1-item:hover .l1-actions { display: flex; }
+.l1-action-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.4); font-size: 0.72rem; padding: 1px 4px; border-radius: 3px; }
+.l1-action-btn:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* SUBCATEGORY (L2) */
+.l2-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 12px 7px 24px; cursor: pointer; user-select: none;
+  color: #aec9db; font-size: 0.84rem; font-weight: 600;
+  transition: background 0.1s, color 0.1s;
+}
+.l2-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.l2-item.active { background: rgba(133,196,65,0.15); color: var(--gs-green); border-left: 2px solid var(--gs-green); padding-left: 22px; }
+.l2-chevron { color: rgba(255,255,255,0.35); font-size: 0.58rem; transition: transform 0.2s; flex-shrink: 0; }
+.l2-chevron.open { transform: rotate(90deg); }
+.l2-name { flex: 1; }
+.l2-actions { display: none; gap: 3px; }
+.l2-item:hover .l2-actions { display: flex; }
+
+/* SECTION (L3) */
+.l3-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 10px 6px 36px; cursor: pointer; user-select: none;
+  color: #8dafc4; font-size: 0.8rem; font-weight: 600;
+  transition: background 0.1s, color 0.1s;
+}
+.l3-item:hover { background: rgba(255,255,255,0.05); color: #c5dae8; }
+.l3-item.active { background: rgba(133,196,65,0.1); color: var(--gs-green); }
+.l3-chevron { color: rgba(255,255,255,0.25); font-size: 0.55rem; transition: transform 0.2s; flex-shrink: 0; }
+.l3-chevron.open { transform: rotate(90deg); }
+.l3-name { flex: 1; }
+.l3-actions { display: none; gap: 3px; }
+.l3-item:hover .l3-actions { display: flex; }
+
+/* SUBSECTION (L4 - items) */
+.l4-item {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 8px 5px 46px;
+  transition: background 0.1s; border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.l4-item:last-child { border-bottom: none; }
+.l4-item:hover { background: rgba(255,255,255,0.05); }
+.l4-item.active { background: rgba(133,196,65,0.12); }
+.l4-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gs-green); flex-shrink: 0; opacity: 0.7; }
+.l4-dot.in-progress { background: #ffc107; }
+.l4-name {
+  flex: 1; color: #c0d8e8; font-size: 0.8rem; cursor: pointer;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  padding: 2px 0;
+}
+.l4-name:hover { color: #fff; }
+.l4-link-btn {
+  background: rgba(13,147,137,0.2); border: 1px solid rgba(13,147,137,0.4);
+  color: var(--gs-teal); font-size: 0.68rem; padding: 1px 6px; border-radius: 3px;
+  cursor: pointer; text-decoration: none; flex-shrink: 0; display: none;
+  white-space: nowrap; font-weight: 600;
+}
+.l4-link-btn:hover { background: rgba(13,147,137,0.4); color: #fff; }
+.l4-item:hover .l4-link-btn, .l4-link-btn.always-show { display: inline; }
+.l4-ip-dot { width: 6px; height: 6px; border-radius: 50%; background: #ffc107; flex-shrink: 0; }
+.l4-actions { display: none; gap: 3px; }
+.l4-item:hover .l4-actions { display: flex; }
+.l4-action-btn { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.3); font-size: 0.7rem; padding: 1px 3px; border-radius: 2px; }
+.l4-action-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+.l4-add-btn { display: none; width: 100%; padding: 4px 10px 4px 46px; background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.2); font-size: 0.75rem; text-align: left; transition: color 0.1s; }
+.l4-add-btn:hover { color: var(--gs-green); }
+
+/* ADMIN NAV ITEM */
+.admin-nav-item { margin: 8px 10px 0; padding: 7px 12px; background: rgba(237,124,46,0.15); border: 1px solid rgba(237,124,46,0.3); border-radius: 5px; cursor: pointer; color: #f0a06a; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 6px; transition: background 0.12s; }
+.admin-nav-item:hover { background: rgba(237,124,46,0.25); color: #fff; }
+.admin-nav-item.active { background: rgba(237,124,46,0.3); color: #fff; }
+
+/* MAIN CONTENT */
+.main-content { flex: 1; overflow-y: auto; padding: 24px; }
+.main-content::-webkit-scrollbar { width: 6px; }
+.main-content::-webkit-scrollbar-track { background: #f0f0f0; }
+.main-content::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 3px; }
+
+.welcome-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; opacity: 0.5; position: relative; }
+.welcome-icon { font-size: 3rem; margin-bottom: 16px; }
+.welcome-state h2 { font-family: 'PT Serif', Georgia, serif; color: var(--gs-navy); margin-bottom: 8px; }
+.welcome-state p { color: #777; font-size: 0.9rem; }
+
+/* TOOL DETAIL */
+.tool-detail { background: var(--gs-white); border: 1px solid var(--gs-border); border-radius: 6px; padding: 24px; border-top: 3px solid var(--gs-green); }
+.tool-detail-header { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid #eee; }
+.tool-detail-title { font-family: 'PT Serif', Georgia, serif; font-size: 1.3rem; color: var(--gs-navy); margin-bottom: 6px; }
+.tool-meta-item { font-size: 0.8rem; color: #888; display: flex; align-items: center; gap: 4px; }
+.detail-section { margin-bottom: 20px; }
+.detail-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gs-navy); margin-bottom: 6px; }
+.detail-text { font-size: 0.9rem; color: var(--gs-charcoal); line-height: 1.6; white-space: pre-wrap; }
+.detail-empty { font-size: 0.85rem; color: #bbb; font-style: italic; }
+.kb-articles-list { display: flex; flex-direction: column; gap: 6px; }
+.kb-article-item { display: flex; align-items: center; gap: 8px; background: #f8f9fa; border: 1px solid #eee; border-radius: 4px; padding: 7px 12px; font-size: 0.85rem; }
+.kb-article-item a { color: var(--gs-green-dark); text-decoration: none; }
+.kb-article-item a:hover { color: var(--gs-green); text-decoration: underline; }
+.breadcrumb { font-size: 0.78rem; color: #888; margin-bottom: 16px; display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
+.breadcrumb span { color: #bbb; }
+.back-btn { background: none; border: none; cursor: pointer; color: var(--gs-green-dark); font-size: 0.82rem; font-weight: 600; padding: 0; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+.back-btn:hover { color: var(--gs-green); }
+
+/* IN-PROGRESS badge */
+.ip-badge { display: inline-flex; align-items: center; gap: 4px; background: #fff3cd; color: #856404; border: 1px solid #ffc107; font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.4px; flex-shrink: 0; }
+
+/* MODAL */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 500; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal { background: var(--gs-white); border-radius: 8px; width: 640px; max-width: 95vw; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0,0,0,0.3); transform: translateY(20px); transition: transform 0.2s; }
+.modal-overlay.open .modal { transform: translateY(0); }
+.modal-header { background: var(--gs-navy); padding: 16px 20px; border-bottom: 3px solid var(--gs-green); display: flex; align-items: center; justify-content: space-between; border-radius: 8px 8px 0 0; }
+.modal-title { font-family: 'PT Serif', Georgia, serif; color: #fff; font-size: 1rem; }
+.modal-close { background: none; border: none; color: rgba(255,255,255,0.6); cursor: pointer; font-size: 1.2rem; }
+.modal-close:hover { color: #fff; }
+.modal-body { padding: 20px; }
+.modal-footer { padding: 14px 20px; border-top: 1px solid #eee; display: flex; justify-content: flex-end; gap: 8px; }
+.form-row { margin-bottom: 14px; }
+.form-row-inline { display: flex; gap: 10px; align-items: flex-start; }
+label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gs-navy); margin-bottom: 5px; }
+input[type=text], input[type=url], input[type=password], textarea, select { width: 100%; border: 1px solid var(--gs-border); border-radius: 4px; padding: 8px 10px; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 0.88rem; color: var(--gs-charcoal); outline: none; transition: border-color 0.15s; background: #fff; }
+input:focus, textarea:focus, select:focus { border-color: var(--gs-green); box-shadow: 0 0 0 2px rgba(133,196,65,0.15); }
+textarea { resize: vertical; min-height: 80px; }
+.kb-entry-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+.kb-entry-row input { flex: 1; }
+.kb-remove-btn { background: none; border: none; cursor: pointer; color: #c00; font-size: 1rem; padding: 4px; }
+.kb-add-btn { background: none; border: 1px dashed #bbb; color: #888; cursor: pointer; font-size: 0.8rem; padding: 5px 10px; border-radius: 4px; }
+.kb-add-btn:hover { border-color: var(--gs-green); color: var(--gs-green-dark); }
+.pw-modal { max-width: 360px; }
+.pw-error { color: #c00; font-size: 0.82rem; margin-top: 6px; display: none; }
+
+/* USER LOGIN SCREEN */
+.login-screen {
+  position: fixed; inset: 0; z-index: 800;
+  background: var(--gs-navy);
+  display: flex; align-items: center; justify-content: center;
+}
+.login-card {
+  background: #fff; border-radius: 10px;
+  width: 380px; max-width: 94vw;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.login-card-header {
+  background: var(--gs-navy); padding: 28px 28px 20px;
+  text-align: center; border-bottom: 3px solid var(--gs-green);
+}
+.login-logo { display: flex; align-items: center; justify-content: center; gap: 2px; margin-bottom: 8px; }
+.login-logo-g { font-family: 'PT Serif', Georgia, serif; font-weight: 700; font-size: 1.6rem; color: var(--gs-green); }
+.login-logo-text { font-family: 'PT Serif', Georgia, serif; font-weight: 700; font-size: 1.6rem; color: #fff; }
+.login-subtitle { font-size: 0.82rem; color: #aec9db; }
+.login-card-body { padding: 24px 28px 28px; }
+.login-card-body label { font-size: 0.8rem; font-weight: 600; color: var(--gs-navy); display: block; margin-bottom: 5px; }
+.login-card-body input { width: 100%; border: 1px solid var(--gs-border); border-radius: 4px; padding: 9px 11px; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 0.88rem; outline: none; margin-bottom: 14px; }
+.login-card-body input:focus { border-color: var(--gs-green); box-shadow: 0 0 0 2px rgba(133,196,65,0.15); }
+.login-btn { width: 100%; background: var(--gs-green-dark); color: #fff; border: none; border-radius: 4px; padding: 10px; font-family: 'Source Sans Pro', Arial, sans-serif; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: background 0.15s; }
+.login-btn:hover { background: var(--gs-green); }
+.login-error { color: #c00; font-size: 0.82rem; margin-top: -8px; margin-bottom: 12px; display: none; }
+.login-divider { display: flex; align-items: center; gap: 10px; margin: 16px 0 4px; }
+.login-divider span { font-size: 0.75rem; color: #bbb; white-space: nowrap; }
+.login-divider:before, .login-divider:after { content:''; flex:1; height:1px; background:#eee; }
+
+/* USER CHIP in header */
+.user-chip { display: flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.1); border-radius: 20px; padding: 4px 12px 4px 8px; }
+.user-avatar { width: 26px; height: 26px; border-radius: 50%; background: var(--gs-green-dark); color: #fff; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.user-name { font-size: 0.8rem; color: #fff; font-weight: 600; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.user-signout { background: none; border: none; cursor: pointer; color: rgba(255,255,255,0.5); font-size: 0.72rem; padding: 0 0 0 6px; }
+.user-signout:hover { color: #fff; }
+.confirm-modal { max-width: 400px; }
+.confirm-text { font-size: 0.9rem; margin-bottom: 12px; }
+.unsaved-modal { max-width: 380px; }
+.unsaved-modal .modal-header { background: #7a4f00; border-bottom-color: #ffc107; }
+.unsaved-icon { font-size: 2rem; text-align: center; margin-bottom: 10px; }
+.unsaved-msg { font-size: 0.9rem; text-align: center; color: #555; margin-bottom: 4px; }
+.unsaved-sub { font-size: 0.8rem; text-align: center; color: #999; }
+
+/* ADMIN LOGS */
+.logs-table-wrap { overflow-x: auto; }
+.log-filter-row th { background: #0d2f47 !important; padding: 4px 6px !important; }
+.log-col-filter {
+  width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 3px; padding: 4px 7px; color: #fff; font-size: 0.75rem;
+  outline: none; font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+.log-col-filter::placeholder { color: rgba(255,255,255,0.35); }
+.log-col-filter:focus { border-color: var(--gs-green); background: rgba(255,255,255,0.15); }
+select.log-col-filter option { background: var(--gs-navy); color: #fff; }
+table { border-collapse: collapse; width: 100%; font-size: 0.84rem; }
+th { background: var(--gs-navy); color: #fff; font-family: 'Source Sans Pro', Arial, sans-serif; font-weight: 700; padding: 9px 12px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; }
+th:hover { background: #0a3a5e; }
+th .sort-icon { opacity: 0.5; margin-left: 4px; }
+td { padding: 8px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+tr:nth-child(even) td { background: var(--gs-warm-gray); }
+tr:hover td { background: var(--gs-sage); }
+.type-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 700; }
+.type-main-category { background: #dce8fd; color: #0a3a8a; }
+.type-subcategory { background: #e3f0fd; color: #0a4a8a; }
+.type-section { background: #eafbe3; color: #1a6a15; }
+.type-item { background: #fef9e7; color: #8a6500; }
+.action-added { color: var(--gs-green-dark); font-weight: 600; }
+.action-edited { color: var(--gs-teal); font-weight: 600; }
+.action-removed { color: var(--gs-orange); font-weight: 600; }
+.empty-state { text-align: center; padding: 40px; color: #aaa; font-style: italic; }
+.page-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 14px; border-bottom: 2px solid var(--gs-border); }
+.page-header h1 { font-family: 'PT Serif', Georgia, serif; font-size: 1.5rem; color: var(--gs-navy); }
+
+/* TOAST */
+.toast { position: fixed; bottom: 20px; right: 20px; z-index: 1000; background: var(--gs-navy); color: #fff; padding: 12px 18px; border-radius: 6px; font-size: 0.85rem; box-shadow: 0 4px 16px rgba(0,0,0,0.25); transform: translateY(60px); opacity: 0; transition: transform 0.3s, opacity 0.3s; max-width: 320px; }
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.success { border-left: 4px solid var(--gs-green); }
+.toast.warning { border-left: 4px solid var(--gs-orange); }
+
+/* FIELD TOGGLE */
+.field-toggle-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+.field-toggle-row label { margin-bottom: 0; }
+.field-toggle-btn { background: none; border: 1px solid #ccc; border-radius: 12px; cursor: pointer; font-size: 0.72rem; color: #888; padding: 2px 10px; transition: all 0.15s; white-space: nowrap; flex-shrink: 0; }
+.field-toggle-btn:hover { border-color: var(--gs-orange); color: var(--gs-orange); }
+.field-toggle-btn.hidden-field { background: #fff3e0; border-color: var(--gs-orange); color: var(--gs-orange); }
+.field-hidden-notice { font-size: 0.78rem; color: var(--gs-orange); font-style: italic; padding: 6px 10px; background: #fff3e0; border: 1px dashed #ffc07a; border-radius: 4px; display: flex; align-items: center; gap: 6px; }
+
+/* RICH EDITOR */
+.desc-editor-wrap { border: 1px solid var(--gs-border); border-radius: 4px; overflow: hidden; transition: border-color 0.15s; }
+.desc-editor-wrap:focus-within { border-color: var(--gs-green); box-shadow: 0 0 0 2px rgba(133,196,65,0.15); }
+.desc-editor-toolbar { display: flex; align-items: center; gap: 4px; padding: 5px 8px; background: #f8f9fa; border-bottom: 1px solid #eee; flex-wrap: wrap; }
+.desc-toolbar-btn { background: none; border: 1px solid transparent; border-radius: 3px; cursor: pointer; padding: 3px 7px; font-size: 0.78rem; color: #555; transition: all 0.1s; line-height: 1.4; }
+.desc-toolbar-btn:hover { background: #e8e8e8; border-color: #ccc; color: #222; }
+.desc-toolbar-sep { width: 1px; height: 18px; background: #ddd; margin: 0 3px; flex-shrink: 0; }
+.desc-editor { min-height: 100px; max-height: 320px; overflow-y: auto; padding: 10px 12px; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 0.88rem; color: var(--gs-charcoal); outline: none; line-height: 1.6; background: #fff; word-break: break-word; }
+.desc-editor:empty:before { content: attr(data-placeholder); color: #aaa; pointer-events: none; display: block; }
+.desc-editor p, .desc-editor div { margin: 0; min-height: 1.4em; }
+.desc-editor br { display: block; }
+.desc-editor ul, .desc-editor ol { padding-left: 20px; margin: 4px 0; }
+.desc-editor li { margin: 2px 0; }
+.desc-editor img { max-width: 100%; border-radius: 4px; border: 1px solid #ddd; margin: 6px 0; display: block; }
+.desc-drop-zone { border: 2px dashed #bbb; border-radius: 4px; padding: 8px 14px; margin-top: 6px; display: flex; align-items: center; gap: 8px; color: #aaa; font-size: 0.8rem; cursor: pointer; transition: all 0.15s; background: #fafafa; }
+.desc-drop-zone:hover, .desc-drop-zone.drag-over { border-color: var(--gs-green); color: var(--gs-green-dark); background: #f4fbee; }
+.desc-rendered { font-size: 0.9rem; color: var(--gs-charcoal); line-height: 1.6; }
+.desc-rendered p, .desc-rendered div { margin: 0; min-height: 1.4em; }
+.desc-rendered br { display: block; }
+.desc-rendered ul { padding-left: 20px; margin: 4px 0; list-style: disc; }
+.desc-rendered ol { padding-left: 20px; margin: 4px 0; list-style: decimal; }
+.desc-rendered li { margin: 2px 0; }
+.desc-rendered strong { font-weight: 700; }
+.desc-rendered em { font-style: italic; }
+.desc-rendered u { text-decoration: underline; }
+.desc-rendered img { display: none; }
+.screenshots-section { margin-top: 14px; }
+.screenshots-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #888; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.screenshots-grid { display: flex; flex-direction: column; gap: 12px; }
+.screenshot-item { border: 1px solid #e0e0e0; border-radius: 6px; overflow: hidden; background: #fafafa; display: flex; justify-content: center; }
+.screenshot-img { max-width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.15s; }
+.screenshot-img:hover { opacity: 0.88; }
+.lightbox-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); z-index: 900; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+.lightbox-overlay.open { opacity: 1; pointer-events: all; }
+.lightbox-overlay img { max-width: 92vw; max-height: 88vh; border-radius: 6px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
+.lightbox-close { position: absolute; top: 18px; right: 24px; color: #fff; font-size: 1.8rem; cursor: pointer; opacity: 0.8; background: none; border: none; line-height: 1; }
+.lightbox-close:hover { opacity: 1; }
+
+/* FAVORITE STAR on detail page */
+.fav-btn { cursor: pointer; font-size: 1.1rem; padding: 2px 6px; background: none; border: 1px solid transparent; border-radius: 4px; transition: all 0.15s; }
+.fav-btn:hover { border-color: #f5c842; background: #fffbe6; }
+.fav-btn.is-fav { color: #f5c842; }
+
+body.dark .log-reason { color: #8aacbf !important; }
+
+/* DETAIL PAGE FOOTER */
+.detail-footer {
+  margin-top: 28px;
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border: 1px solid var(--gs-border);
+  border-radius: 6px;
+  border-left: 3px solid var(--gs-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+.detail-footer-icon { font-size: 1.2rem; flex-shrink: 0; align-self: flex-start; margin-top: -6px; }
+.detail-footer-text { font-size: 0.85rem; color: #555; line-height: 1.5; }
+.detail-footer-text a { color: var(--gs-teal); font-weight: 700; text-decoration: none; }
+.detail-footer-text a:hover { color: var(--gs-green-dark); text-decoration: underline; }
+
+/* WELCOME FOOTER */
+.welcome-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <div class="login-card-header">
+      <div class="login-logo"><span class="login-logo-g">G</span><span class="login-logo-text">reenshades</span></div>
+      <div class="login-subtitle">Internal Toolbox — Sign in to continue</div>
+    </div>
+    <div class="login-card-body">
+      <label>Email Address</label>
+      <input type="email" id="loginEmail" placeholder="you@greenshades.com" onkeydown="if(event.key==='Enter')document.getElementById('loginPassword').focus()">
+      <label>Password</label>
+      <input type="password" id="loginPassword" placeholder="Password" onkeydown="if(event.key==='Enter')submitLogin()">
+      <div class="login-error" id="loginError"></div>
+      <button class="login-btn" onclick="submitLogin()">Sign In</button>
+    </div>
+  </div>
+</div>
+
+<header class="gs-header">
+  <div class="gs-header-left">
+    <div class="gs-logo"><span class="gs-logo-g">G</span><span class="gs-logo-text">reenshades</span></div>
+    <div class="gs-tool-name"><span class="dancing-toolbox">🧰</span>Internal Toolbox</div>
+  </div>
+  <div class="gs-header-right">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">🌙 Dark</button>
+    <div id="syncIndicator" style="display:flex;align-items:center;padding:0 4px"></div>
+    <span class="super-admin-badge" id="superAdminBadge" style="display:none">★ Super Admin</span>
+    <span class="admin-badge" id="adminBadge" style="display:none">⚙ Admin Mode</span>
+    <button class="btn btn-secondary" id="adminToggleBtn" onclick="toggleAdmin()">Enter Admin Mode</button>
+    <div class="user-chip" id="userChip" style="display:none">
+      <div class="user-avatar" id="userAvatar"></div>
+      <span class="user-name" id="userNameDisplay"></span>
+      <button class="user-signout" onclick="signOut()" title="Sign out">Sign out ✕</button>
+    </div>
+  </div>
+</header>
+
+<div class="app-body">
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <!-- FAVORITES -->
+      <div class="fav-section" id="favSection">
+        <div class="fav-header" onclick="toggleFavSection()">
+          <span class="fav-toggle-icon" id="favToggleIcon">▶</span>
+          <span class="fav-title">⭐ Favorites</span>
+          <span class="fav-count" id="favCount">0</span>
+        </div>
+        <div id="favList" style="display:none">
+          <div id="favItemsList"></div>
+        </div>
+      </div>
+      <!-- SEARCH -->
+      <div class="sidebar-search">
+        <input type="text" id="sideSearch" placeholder="Search…" oninput="renderNav()">
+      </div>
+    </div>
+    <nav class="sidebar-nav" id="sideNav"></nav>
+    <div id="adminLogsNav" style="padding-bottom:8px"></div>
+  </aside>
+
+  <main class="main-content" id="mainContent">
+    <div class="welcome-state" id="welcomeState">
+      <div class="welcome-icon">🛠️</div>
+      <h2>Internal Toolbox</h2>
+      <p>Select an item from the left to get started.</p>
+      <div class="welcome-footer">
+        <div class="detail-footer" style="max-width:540px;width:100%">
+          <div class="detail-footer-icon">💬</div>
+          <div class="detail-footer-text">
+            Do you have a suggestion for a training resource, internal tool, configurable setting, or defined process to add or update in the Internal Toolbox?<br>
+            Please submit your request through the workflow in <a href="https://greenshades.slack.com/archives/C0B172MT8CQ" target="_blank">#forum-internal-toolbox</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="toolDetailView" style="display:none"></div>
+    <div id="adminLogsView" style="display:none"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- PASSWORD MODAL -->
+<div class="modal-overlay" id="pwModal">
+  <div class="modal pw-modal">
+    <div class="modal-header"><span class="modal-title">🔐 Admin Authentication</span><button class="modal-close" onclick="closeModal('pwModal')">✕</button></div>
+    <div class="modal-body">
+      <div class="form-row">
+        <label>Enter Admin Password</label>
+        <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')checkPassword()">
+        <div class="pw-error" id="pwError">Incorrect password. Please try again.</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('pwModal')">Cancel</button>
+      <button class="btn btn-primary" onclick="checkPassword()">Authenticate</button>
+    </div>
+  </div>
+</div>
+
+<!-- GENERIC NAME MODAL (L1, L2, Section) -->
+<div class="modal-overlay" id="nameModal">
+  <div class="modal" style="max-width:420px">
+    <div class="modal-header"><span class="modal-title" id="nameModalTitle">Add</span><button class="modal-close" onclick="closeModal('nameModal')">✕</button></div>
+    <div class="modal-body">
+      <div class="form-row"><label id="nameModalLabel">Name</label><input type="text" id="nameInput" placeholder=""></div>
+      <div class="form-row" id="nameReasonRow" style="display:none"><label>Reason for Change *</label><textarea id="nameReasonInput" rows="3" placeholder="Describe the reason for this change…"></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('nameModal')">Cancel</button>
+      <button class="btn btn-primary" id="nameSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD/EDIT SUBSECTION MODAL -->
+<div class="modal-overlay" id="subsectionModal">
+  <div class="modal">
+    <div class="modal-header"><span class="modal-title" id="subModalTitle">Add Item</span><button class="modal-close" onclick="attemptCloseSubModal()">✕</button></div>
+    <div class="modal-body">
+      <div class="form-row" style="margin-bottom:10px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+          <input type="checkbox" id="subInProgress" style="width:auto;accent-color:#ffc107">
+          <span style="font-size:0.8rem;font-weight:600;color:#856404">Mark as In Progress <span style="font-weight:400;color:#aaa">(admin-only visibility)</span></span>
+        </label>
+      </div>
+      <div class="form-row-inline">
+        <div class="form-row" style="flex:2"><label>Title *</label><input type="text" id="subTitle" placeholder="Tool or item name"></div>
+        <div class="form-row" style="flex:2"><label>Tool Link</label><input type="url" id="subLink" placeholder="https://…"></div>
+      </div>
+      <div class="form-row" id="fieldRow_desc">
+        <div class="field-toggle-row"><label>Description</label><button class="field-toggle-btn" id="toggleBtn_desc" onclick="toggleField('desc')" type="button">Hide Field</button></div>
+        <div id="fieldContent_desc">
+          <div class="desc-editor-wrap">
+            <div class="desc-editor-toolbar">
+              <button class="desc-toolbar-btn" title="Bold" onmousedown="event.preventDefault();document.execCommand('bold')" type="button"><b>B</b></button>
+              <button class="desc-toolbar-btn" title="Italic" onmousedown="event.preventDefault();document.execCommand('italic')" type="button"><i>I</i></button>
+              <button class="desc-toolbar-btn" title="Underline" onmousedown="event.preventDefault();document.execCommand('underline')" type="button"><u>U</u></button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Bullet list" onmousedown="event.preventDefault();document.execCommand('insertUnorderedList')" type="button">• List</button>
+              <button class="desc-toolbar-btn" title="Numbered list" onmousedown="event.preventDefault();document.execCommand('insertOrderedList')" type="button">1. List</button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Add screenshot" onclick="document.getElementById('descImgUpload').click()" type="button">📷 Screenshot</button>
+              <input type="file" id="descImgUpload" accept="image/*" multiple style="display:none" onchange="insertImagesFromFiles(this.files)">
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Clear formatting" onmousedown="event.preventDefault();document.execCommand('removeFormat')" type="button">T̶ Clear</button>
+            </div>
+            <div id="subDesc" class="desc-editor" contenteditable="true"
+              data-placeholder="Describe what this tool or item does… Paste screenshots (Ctrl+V), drag &amp; drop, or use 📷."
+              onpaste="handleDescPaste(event)"
+              ondragover="event.preventDefault();document.getElementById('descDropZone').classList.add('drag-over')"
+              ondragleave="document.getElementById('descDropZone').classList.remove('drag-over')"
+              ondrop="handleDescDrop(event)"></div>
+          </div>
+          <div class="desc-drop-zone" id="descDropZone"
+            onclick="document.getElementById('descImgUpload').click()"
+            ondragover="event.preventDefault();this.classList.add('drag-over')"
+            ondragleave="this.classList.remove('drag-over')"
+            ondrop="handleDescDrop(event)">
+            <span>🖼️</span><span>Drag &amp; drop images here, or click to upload</span>
+          </div>
+        </div>
+        <div id="fieldHidden_desc" class="field-hidden-notice" style="display:none">⚠ Description is hidden on the detail view</div>
+      </div>
+      <div class="form-row" id="fieldRow_demo">
+        <div class="field-toggle-row"><label>Demo Link</label><button class="field-toggle-btn" id="toggleBtn_demo" onclick="toggleField('demo')" type="button">Hide Field</button></div>
+        <div id="fieldContent_demo"><input type="url" id="subDemo" placeholder="https://… (link to video demo)"></div>
+        <div id="fieldHidden_demo" class="field-hidden-notice" style="display:none">⚠ Demo Link is hidden on the detail view</div>
+      </div>
+      <div class="form-row" id="fieldRow_perms">
+        <div class="field-toggle-row"><label>Permissions Required</label><button class="field-toggle-btn" id="toggleBtn_perms" onclick="toggleField('perms')" type="button">Hide Field</button></div>
+        <div id="fieldContent_perms">
+          <div class="desc-editor-wrap">
+            <div class="desc-editor-toolbar">
+              <button class="desc-toolbar-btn" title="Bold" onmousedown="event.preventDefault();document.execCommand('bold')" type="button"><b>B</b></button>
+              <button class="desc-toolbar-btn" title="Italic" onmousedown="event.preventDefault();document.execCommand('italic')" type="button"><i>I</i></button>
+              <button class="desc-toolbar-btn" title="Underline" onmousedown="event.preventDefault();document.execCommand('underline')" type="button"><u>U</u></button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Bullet list" onmousedown="event.preventDefault();document.execCommand('insertUnorderedList')" type="button">• List</button>
+              <button class="desc-toolbar-btn" title="Numbered list" onmousedown="event.preventDefault();document.execCommand('insertOrderedList')" type="button">1. List</button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Add screenshot" onclick="document.getElementById('permsImgUpload').click()" type="button">📷 Screenshot</button>
+              <input type="file" id="permsImgUpload" accept="image/*" multiple style="display:none" onchange="insertImagesFromFilesTo('subPerms',this.files)">
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Clear formatting" onmousedown="event.preventDefault();document.execCommand('removeFormat')" type="button">T̶ Clear</button>
+            </div>
+            <div id="subPerms" class="desc-editor" contenteditable="true"
+              data-placeholder="Describe what permissions are required to use this tool…"
+              onpaste="handleEditorPaste(event,'subPerms')"
+              ondragover="event.preventDefault();document.getElementById('permsDropZone').classList.add('drag-over')"
+              ondragleave="document.getElementById('permsDropZone').classList.remove('drag-over')"
+              ondrop="handleEditorDrop(event,'subPerms')"></div>
+          </div>
+          <div class="desc-drop-zone" id="permsDropZone"
+            onclick="document.getElementById('permsImgUpload').click()"
+            ondragover="event.preventDefault();this.classList.add('drag-over')"
+            ondragleave="this.classList.remove('drag-over')"
+            ondrop="handleEditorDrop(event,'subPerms')">
+            <span>🖼️</span><span>Drag &amp; drop images here, or click to upload</span>
+          </div>
+        </div>
+        <div id="fieldHidden_perms" class="field-hidden-notice" style="display:none">⚠ Permissions Required is hidden on the detail view</div>
+      </div>
+      <div class="form-row" id="fieldRow_config">
+        <div class="field-toggle-row"><label>Where / How to Configure</label><button class="field-toggle-btn" id="toggleBtn_config" onclick="toggleField('config')" type="button">Hide Field</button></div>
+        <div id="fieldContent_config">
+          <div class="desc-editor-wrap">
+            <div class="desc-editor-toolbar">
+              <button class="desc-toolbar-btn" title="Bold" onmousedown="event.preventDefault();document.execCommand('bold')" type="button"><b>B</b></button>
+              <button class="desc-toolbar-btn" title="Italic" onmousedown="event.preventDefault();document.execCommand('italic')" type="button"><i>I</i></button>
+              <button class="desc-toolbar-btn" title="Underline" onmousedown="event.preventDefault();document.execCommand('underline')" type="button"><u>U</u></button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Bullet list" onmousedown="event.preventDefault();document.execCommand('insertUnorderedList')" type="button">• List</button>
+              <button class="desc-toolbar-btn" title="Numbered list" onmousedown="event.preventDefault();document.execCommand('insertOrderedList')" type="button">1. List</button>
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Add screenshot" onclick="document.getElementById('configImgUpload').click()" type="button">📷 Screenshot</button>
+              <input type="file" id="configImgUpload" accept="image/*" multiple style="display:none" onchange="insertImagesFromFilesTo('subConfig',this.files)">
+              <span class="desc-toolbar-sep"></span>
+              <button class="desc-toolbar-btn" title="Clear formatting" onmousedown="event.preventDefault();document.execCommand('removeFormat')" type="button">T̶ Clear</button>
+            </div>
+            <div id="subConfig" class="desc-editor" contenteditable="true"
+              data-placeholder="Steps or notes on where to find and configure this… Paste screenshots (Ctrl+V), drag &amp; drop, or use 📷."
+              onpaste="handleEditorPaste(event,'subConfig')"
+              ondragover="event.preventDefault();document.getElementById('configDropZone').classList.add('drag-over')"
+              ondragleave="document.getElementById('configDropZone').classList.remove('drag-over')"
+              ondrop="handleEditorDrop(event,'subConfig')"></div>
+          </div>
+          <div class="desc-drop-zone" id="configDropZone"
+            onclick="document.getElementById('configImgUpload').click()"
+            ondragover="event.preventDefault();this.classList.add('drag-over')"
+            ondragleave="this.classList.remove('drag-over')"
+            ondrop="handleEditorDrop(event,'subConfig')">
+            <span>🖼️</span><span>Drag &amp; drop images here, or click to upload</span>
+          </div>
+        </div>
+        <div id="fieldHidden_config" class="field-hidden-notice" style="display:none">⚠ Configure section is hidden on the detail view</div>
+      </div>
+      <div class="form-row" id="fieldRow_kb">
+        <div class="field-toggle-row"><label>Related KB Articles</label><button class="field-toggle-btn" id="toggleBtn_kb" onclick="toggleField('kb')" type="button">Hide Field</button></div>
+        <div id="fieldContent_kb"><div id="kbEntriesWrap"></div><button class="kb-add-btn" onclick="addKBRow()">+ Add KB Article</button></div>
+        <div id="fieldHidden_kb" class="field-hidden-notice" style="display:none">⚠ KB Articles section is hidden on the detail view</div>
+      </div>
+      <div class="form-row" id="subReasonRow" style="display:none"><label>Reason for Change *</label><textarea id="subReason" rows="3" placeholder="Describe the reason for this edit…"></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="attemptCloseSubModal()">Cancel</button>
+      <button class="btn btn-primary" id="subSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- UNSAVED CHANGES MODAL -->
+<div class="modal-overlay" id="unsavedModal" style="z-index:600">
+  <div class="modal unsaved-modal">
+    <div class="modal-header"><span class="modal-title">⚠ Unsaved Changes</span><button class="modal-close" onclick="closeModal('unsavedModal')">✕</button></div>
+    <div class="modal-body">
+      <div class="unsaved-icon">📝</div>
+      <p class="unsaved-msg">You have unsaved changes.</p>
+      <p class="unsaved-sub">Would you like to save before closing?</p>
+    </div>
+    <div class="modal-footer" style="justify-content:space-between">
+      <button class="btn btn-danger btn-sm" onclick="discardSubModal()">Discard Changes</button>
+      <div style="display:flex;gap:8px">
+        <button class="btn btn-secondary btn-sm" onclick="closeModal('unsavedModal')" style="background:#f0f0f0;color:#333">Keep Editing</button>
+        <button class="btn btn-primary btn-sm" onclick="saveFromUnsaved()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM DELETE MODAL -->
+<div class="modal-overlay" id="confirmModal">
+  <div class="modal confirm-modal">
+    <div class="modal-header"><span class="modal-title" id="confirmTitle">Confirm Removal</span><button class="modal-close" onclick="closeModal('confirmModal')">✕</button></div>
+    <div class="modal-body">
+      <p class="confirm-text" id="confirmText"></p>
+      <div class="form-row"><label>Reason for Removal *</label><textarea id="confirmReason" rows="3" placeholder="Describe why this is being removed…"></textarea></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('confirmModal')">Cancel</button>
+      <button class="btn btn-danger" id="confirmDeleteBtn">Remove</button>
+    </div>
+  </div>
+</div>
+
+<!-- PASSWORD MANAGER MODAL (Super Admin only) -->
+<div class="modal-overlay" id="pwManagerModal">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-header" style="background:linear-gradient(135deg,#4a1a8a,#8a0a5a);border-bottom-color:#c87aff">
+      <span class="modal-title">★ Password Manager</span>
+      <button class="modal-close" onclick="closeModal('pwManagerModal')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="pw-manager-section">
+        <h3>🔑 User Password</h3>
+        <div class="form-row"><label>New User Password</label><input type="password" id="newUserPw" placeholder="New password for all users" autocomplete="new-password"></div>
+        <div class="form-row"><label>Confirm Password</label><input type="password" id="confirmUserPw" placeholder="Re-enter new password" autocomplete="new-password"></div>
+        <button class="btn btn-primary btn-sm" onclick="saveUserPassword()">Update User Password</button>
+      </div>
+      <div class="pw-manager-section">
+        <h3>⚙ Admin Password</h3>
+        <div class="form-row"><label>New Admin Password</label><input type="password" id="newAdminPw" placeholder="New admin password" autocomplete="new-password"></div>
+        <div class="form-row"><label>Confirm Password</label><input type="password" id="confirmAdminPw" placeholder="Re-enter new password" autocomplete="new-password"></div>
+        <button class="btn btn-primary btn-sm" onclick="saveAdminPassword()">Update Admin Password</button>
+      </div>
+      <div class="pw-manager-section">
+        <h3>★ Super Admin Password</h3>
+        <div class="form-row"><label>New Super Admin Password</label><input type="password" id="newSuperPw" placeholder="New super admin password" autocomplete="new-password"></div>
+        <div class="form-row"><label>Confirm Password</label><input type="password" id="confirmSuperPw" placeholder="Re-enter new password" autocomplete="new-password"></div>
+        <button class="btn btn-primary btn-sm" onclick="saveSuperPassword()">Update Super Admin Password</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" onclick="closeModal('pwManagerModal')">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ─── DATA MODEL ──────────────────────────────────────────────────
+// Structure: L1 (main category) → L2 (subcategory) → sections[] → items[]
+const DEFAULT_SECTIONS = ['Documentation','Internal Tools','Configurable Settings','Defined Processes'];
+
+const DEFAULT_DATA = [
+  {
+    name: 'General', id: null,
+    subcategories: []
+  },
+  {
+    name: 'Products', id: null,
+    subcategories: [
+      'Payroll','Connector','Sync Portal','GoTFC','TFC On-Prem','YEF','DPI',
+      'Garnishments','PTS','SSO','Documents','Timesheets','Time Off'
+    ].sort().map(n => ({ name: n, id: null, sections: [] }))
+  },
+  {
+    name: 'Departments', id: null,
+    subcategories: ['Support','TPE','Development','Sales'].sort().map(n => ({ name: n, id: null, sections: [] }))
+  }
+];
+
+let state = {
+  l1s: [],
+  logs: [],
+  favorites: [],
+  isAdmin: false,
+  isLoggedIn: false,
+  currentUser: '',   // stores "First Last (email@greenshades.com)"
+  currentEmail: '',
+};
+
+// ─── INIT ────────────────────────────────────────────────────────
+// ─── GITHUB SYNC ─────────────────────────────────────────────────
+const GH_TOKEN = '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';
+const GH_OWNER = 'cbabs07';
+const GH_REPO  = 'internal-toolbox';
+const GH_FILE  = 'toolbox-data.json';
+const GH_API   = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${GH_FILE}`;
+
+let ghFileSha = null;
+let syncStatus = 'idle';
+
+function setSyncStatus(status, msg) {
+  syncStatus = status;
+  const el = document.getElementById('syncIndicator');
+  if (!el) return;
+  const map = {
+    idle:    { icon: '☁️',  text: 'Synced',    color: '#85c441' },
+    loading: { icon: '⏳',  text: 'Loading…',  color: '#aec9db' },
+    saving:  { icon: '💾',  text: 'Saving…',   color: '#ed7c2e' },
+    saved:   { icon: '✅',  text: 'Saved',     color: '#85c441' },
+    error:   { icon: '⚠️',  text: msg||'Sync error', color: '#e74c3c' },
+    offline: { icon: '📴',  text: 'Offline — cached', color: '#ed7c2e' },
+  };
+  const s = map[status] || map.idle;
+  el.innerHTML = `<span style="color:${s.color};font-size:0.78rem;display:flex;align-items:center;gap:4px">${s.icon} ${s.text}</span>`;
+}
+
+async function ghFetch(method, body) {
+  const opts = {
+    method,
+    headers: {
+      'Authorization': `token ${GH_TOKEN}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.github.v3+json',
+    },
+  };
+  if (body) opts.body = JSON.stringify(body);
+  return fetch(GH_API, opts);
+}
+
+async function loadFromGitHub() {
+  setSyncStatus('loading');
+  try {
+    const res = await ghFetch('GET');
+    if (!res.ok) throw new Error(`GitHub GET failed: ${res.status}`);
+    const json = await res.json();
+    ghFileSha = json.sha;
+    const data = JSON.parse(atob(json.content.replace(/\n/g,'')));
+    state.l1s       = data.l1s       || state.l1s;
+    state.logs      = data.logs      || state.logs;
+    state.favorites = data.favorites || state.favorites;
+    runMigrations();
+    cacheLocally();
+    setSyncStatus('idle');
+    return true;
+  } catch(e) {
+    console.warn('GitHub load failed, falling back to localStorage:', e);
+    setSyncStatus('offline');
+    loadFromLocalCache();
+    return false;
+  }
+}
+
+async function saveToGitHub() {
+  setSyncStatus('saving');
+  const payload = { l1s: state.l1s, logs: state.logs, favorites: state.favorites };
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+  const body = {
+    message: `Update toolbox data — ${nowEST()}`,
+    content,
+    ...(ghFileSha ? { sha: ghFileSha } : {}),
+  };
+  try {
+    const res = await ghFetch('PUT', body);
+    if (!res.ok) {
+      const err = await res.json();
+      if (res.status === 409 || (err.message && err.message.includes('sha'))) {
+        await refreshSha();
+        body.sha = ghFileSha;
+        const retry = await ghFetch('PUT', body);
+        if (!retry.ok) throw new Error('Retry failed');
+        const retryJson = await retry.json();
+        ghFileSha = retryJson.content.sha;
+      } else {
+        throw new Error(`PUT failed: ${res.status}`);
+      }
+    } else {
+      const json = await res.json();
+      ghFileSha = json.content.sha;
+    }
+    cacheLocally();
+    setSyncStatus('saved');
+    setTimeout(() => setSyncStatus('idle'), 2500);
+  } catch(e) {
+    console.error('GitHub save failed:', e);
+    setSyncStatus('error', 'Save failed — cached locally');
+    cacheLocally();
+  }
+}
+
+async function refreshSha() {
+  try {
+    const res = await ghFetch('GET');
+    if (res.ok) { const j = await res.json(); ghFileSha = j.sha; }
+  } catch(e) {}
+}
+
+function cacheLocally() {
+  try { localStorage.setItem('toolbox_v2', JSON.stringify({ l1s: state.l1s, logs: state.logs, favorites: state.favorites })); } catch(e) {}
+}
+
+function loadFromLocalCache() {
+  const saved = localStorage.getItem('toolbox_v2');
+  if (saved) {
+    try {
+      const p = JSON.parse(saved);
+      state.l1s       = p.l1s       || state.l1s;
+      state.logs      = p.logs      || state.logs;
+      state.favorites = p.favorites || state.favorites;
+      runMigrations();
+    } catch(e) { buildDefaultState(); }
+  } else {
+    buildDefaultState();
+  }
+}
+
+function runMigrations() {
+  state.l1s.forEach(l1 => (l1.subcategories||[]).forEach(l2 => (l2.sections||[]).forEach(sec => {
+    if (sec.name === 'Training Material') sec.name = 'Documentation';
+  })));
+}
+
+function buildDefaultState() {
+  state.l1s = DEFAULT_DATA.map(l1 => {
+    const l1id = uid();
+    const subs = (l1.subcategories||[]).map(sub => ({
+      id: uid(), name: sub.name,
+      sections: DEFAULT_SECTIONS.map(s => ({ id: uid(), name: s, items: [] }))
+    }));
+    return { id: l1id, name: l1.name, subcategories: subs };
+  });
+}
+
+function initState() {
+  buildDefaultState(); // defaults first; GitHub load will override on boot
+}
+
+function saveState() {
+  saveToGitHub();
+}
+
+function uid() { return '_' + Math.random().toString(36).substr(2,9); }
+function nowEST() {
+  return new Date().toLocaleString('en-US', { timeZone: 'America/New_York', year:'numeric', month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:true });
+}
+function addLog(type, action, title, reason='') {
+  state.logs.unshift({ id: uid(), datetime: nowEST(), user: state.currentUser, type, action, title, reason });
+  saveState();
+}
+
+// ─── OPEN/COLLAPSED STATE ─────────────────────────────────────────
+const openL1 = new Set();
+const openL2 = new Set();
+const openL3 = new Set();
+let currentItemId = null;
+let currentView = null; // 'item' | 'logs'
+
+// ─── PASSWORDS (mutable, stored in localStorage) ──────────────────
+function getPasswords() {
+  const DEFAULTS = { user: 'Grshades1', admin: 'Grshades1!', super: 'GREENSHADES' };
+  try {
+    const saved = localStorage.getItem('toolbox_passwords');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      // Merge only string values — discard anything malformed
+      const result = { ...DEFAULTS };
+      if (typeof parsed.user === 'string' && parsed.user) result.user = parsed.user;
+      if (typeof parsed.admin === 'string' && parsed.admin) result.admin = parsed.admin;
+      if (typeof parsed.super === 'string' && parsed.super) result.super = parsed.super;
+      return result;
+    }
+  } catch(e) {
+    // Corrupted — clear it and fall back to defaults
+    localStorage.removeItem('toolbox_passwords');
+  }
+  return DEFAULTS;
+}
+function savePasswords(obj) {
+  try { localStorage.setItem('toolbox_passwords', JSON.stringify(obj)); } catch(e) {}
+}
+
+// ─── USER LOGIN ──────────────────────────────────────────────────
+function submitLogin() {
+  const emailInput = document.getElementById('loginEmail');
+  const passwordInput = document.getElementById('loginPassword');
+  const errorEl = document.getElementById('loginError');
+  const email = emailInput.value.trim().toLowerCase();
+  const password = passwordInput.value;
+  const pws = getPasswords();
+
+  errorEl.style.display = 'none';
+
+  if (!email) { showLoginError('Please enter your email address.'); return; }
+  if (!email.endsWith('@greenshades.com')) { showLoginError('Only @greenshades.com accounts are allowed.'); return; }
+  if (password !== pws.user && password !== pws.admin && password !== pws.super) {
+    showLoginError('Incorrect password. Please try again.'); passwordInput.value = ''; passwordInput.focus(); return;
+  }
+
+  const prefix = email.split('@')[0];
+  const displayName = prefix.split(/[._]/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+  state.isLoggedIn = true;
+  state.currentEmail = email;
+  state.currentUser = `${displayName} (${email})`;
+
+  if (password === pws.super) { state.isSuperAdmin = true; state.isAdmin = true; }
+  else if (password === pws.admin) { state.isAdmin = true; }
+
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('loginEmail').value = '';
+  document.getElementById('loginPassword').value = '';
+
+  updateUserChip(); updateAdminUI();
+  showToast(`Welcome, ${displayName}!`, 'success');
+}
+
+function showLoginError(msg) {
+  const el = document.getElementById('loginError');
+  el.textContent = msg; el.style.display = 'block';
+}
+
+function signOut() {
+  state.isLoggedIn = false; state.isAdmin = false; state.isSuperAdmin = false;
+  state.currentUser = ''; state.currentEmail = '';
+  updateUserChip(); updateAdminUI();
+  document.getElementById('loginScreen').style.display = '';
+  document.getElementById('toolDetailView').style.display = 'none';
+  document.getElementById('adminLogsView').style.display = 'none';
+  document.getElementById('welcomeState').style.display = '';
+  currentItemId = null; currentView = null;
+  showToast('Signed out.', 'warning');
+}
+
+function updateUserChip() {
+  const chip = document.getElementById('userChip');
+  const nameEl = document.getElementById('userNameDisplay');
+  const avatarEl = document.getElementById('userAvatar');
+  if (!state.isLoggedIn) { chip.style.display = 'none'; return; }
+  chip.style.display = '';
+  const prefix = state.currentEmail.split('@')[0];
+  const displayName = prefix.split(/[._]/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  nameEl.textContent = displayName;
+  const parts = displayName.split(' ');
+  avatarEl.textContent = parts.length >= 2 ? parts[0][0] + parts[parts.length-1][0] : displayName.slice(0,2).toUpperCase();
+}
+
+// ─── ADMIN / SUPER ADMIN ─────────────────────────────────────────
+function toggleAdmin() {
+  if (state.isAdmin) {
+    state.isAdmin = false; state.isSuperAdmin = false; updateAdminUI(); showToast('Exited admin mode', 'warning');
+  } else {
+    openModal('pwModal');
+    setTimeout(() => document.getElementById('pwInput').focus(), 150);
+  }
+}
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  const pws = getPasswords();
+  if (val === pws.super) {
+    state.isAdmin = true; state.isSuperAdmin = true;
+    closeModal('pwModal');
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwError').style.display = 'none';
+    updateAdminUI(); showToast(`★ Super Admin mode enabled — ${state.currentUser}`, 'success');
+  } else if (val === pws.admin) {
+    state.isAdmin = true; state.isSuperAdmin = false;
+    closeModal('pwModal');
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwError').style.display = 'none';
+    updateAdminUI(); showToast(`Admin mode enabled — ${state.currentUser}`, 'success');
+  } else {
+    document.getElementById('pwError').style.display = 'block';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
+  }
+}
+function updateAdminUI() {
+  document.getElementById('adminBadge').style.display = (state.isAdmin && !state.isSuperAdmin) ? '' : 'none';
+  document.getElementById('superAdminBadge').style.display = state.isSuperAdmin ? '' : 'none';
+  document.getElementById('adminToggleBtn').style.display = state.isLoggedIn ? '' : 'none';
+  document.getElementById('adminToggleBtn').textContent = state.isAdmin ? 'Exit Admin Mode' : 'Enter Admin Mode';
+  // Show password manager link in admin nav if super admin
+  renderNav(); renderAdminLogsNav(); renderFavorites();
+}
+
+// ─── PASSWORD MANAGER (Super Admin) ──────────────────────────────
+function openPasswordManager() { openModal('pwManagerModal'); }
+function saveUserPassword() {
+  const np = document.getElementById('newUserPw').value;
+  const cp = document.getElementById('confirmUserPw').value;
+  if (!np) { showToast('Please enter a new password.','warning'); return; }
+  if (np !== cp) { showToast('Passwords do not match.','warning'); return; }
+  const pws = getPasswords(); pws.user = np; savePasswords(pws);
+  document.getElementById('newUserPw').value = ''; document.getElementById('confirmUserPw').value = '';
+  showToast('User password updated.','success');
+}
+function saveAdminPassword() {
+  const np = document.getElementById('newAdminPw').value;
+  const cp = document.getElementById('confirmAdminPw').value;
+  if (!np) { showToast('Please enter a new password.','warning'); return; }
+  if (np !== cp) { showToast('Passwords do not match.','warning'); return; }
+  const pws = getPasswords(); pws.admin = np; savePasswords(pws);
+  document.getElementById('newAdminPw').value = ''; document.getElementById('confirmAdminPw').value = '';
+  showToast('Admin password updated.','success');
+}
+function saveSuperPassword() {
+  const np = document.getElementById('newSuperPw').value;
+  const cp = document.getElementById('confirmSuperPw').value;
+  if (!np) { showToast('Please enter a new password.','warning'); return; }
+  if (np !== cp) { showToast('Passwords do not match.','warning'); return; }
+  const pws = getPasswords(); pws.super = np; savePasswords(pws);
+  document.getElementById('newSuperPw').value = ''; document.getElementById('confirmSuperPw').value = '';
+  showToast('Super admin password updated.','success');
+}
+
+// ─── THEME ───────────────────────────────────────────────────────
+let darkMode = localStorage.getItem('toolbox_theme') === 'dark';
+function applyTheme() {
+  document.body.classList.toggle('dark', darkMode);
+  document.getElementById('themeToggle').textContent = darkMode ? '☀️ Light' : '🌙 Dark';
+  localStorage.setItem('toolbox_theme', darkMode ? 'dark' : 'light');
+}
+function toggleTheme() { darkMode = !darkMode; applyTheme(); }
+
+// ─── FAVORITES ───────────────────────────────────────────────────
+let favOpen = false;
+function toggleFavSection() {
+  favOpen = !favOpen;
+  document.getElementById('favList').style.display = favOpen ? '' : 'none';
+  document.getElementById('favToggleIcon').classList.toggle('open', favOpen);
+}
+function isFav(itemId) { return state.favorites.some(f => f.itemId === itemId); }
+function toggleFavorite(l1Id, l2Id, secId, itemId) {
+  const idx = state.favorites.findIndex(f => f.itemId === itemId);
+  if (idx !== -1) {
+    state.favorites.splice(idx, 1); showToast('Removed from Favorites', 'warning');
+  } else {
+    const item = findItem(l1Id, l2Id, secId, itemId);
+    state.favorites.push({ l1Id, l2Id, secId, itemId, title: item?.title || '' });
+    showToast('Added to Favorites ⭐', 'success');
+  }
+  saveState(); renderFavorites();
+  if (currentView === 'item') showToolDetail(l1Id, l2Id, secId, itemId);
+}
+function moveFav(idx, dir) {
+  const ni = idx + dir;
+  if (ni < 0 || ni >= state.favorites.length) return;
+  [state.favorites[idx], state.favorites[ni]] = [state.favorites[ni], state.favorites[idx]];
+  saveState(); renderFavorites();
+}
+function removeFav(idx) {
+  state.favorites.splice(idx, 1); saveState(); renderFavorites();
+  showToast('Removed from Favorites', 'warning');
+}
+function renderFavorites() {
+  const countEl = document.getElementById('favCount');
+  const listEl = document.getElementById('favItemsList');
+  // Prune stale
+  state.favorites = state.favorites.filter(f => !!findItem(f.l1Id, f.l2Id, f.secId, f.itemId));
+  countEl.textContent = state.favorites.length;
+  if (!state.favorites.length) {
+    listEl.innerHTML = '<div class="fav-empty">No favorites yet — star any item on its detail page</div>';
+    return;
+  }
+  listEl.innerHTML = state.favorites.map((f, idx) => {
+    const item = findItem(f.l1Id, f.l2Id, f.secId, f.itemId);
+    const title = item?.title || f.title || 'Unknown';
+    const isActive = currentItemId === f.itemId;
+    return `<div class="fav-item${isActive?' active':''}" onclick="showToolDetail('${f.l1Id}','${f.l2Id}','${f.secId}','${f.itemId}')">
+      <span class="fav-star">⭐</span>
+      <span class="fav-name" title="${escHtml(title)}">${escHtml(title)}</span>
+      <span class="fav-reorder">
+        <button class="fav-reorder-btn" onclick="event.stopPropagation();moveFav(${idx},-1)">▲</button>
+        <button class="fav-reorder-btn" onclick="event.stopPropagation();moveFav(${idx},1)">▼</button>
+      </span>
+      <button class="fav-remove-btn" onclick="event.stopPropagation();removeFav(${idx})">✕</button>
+    </div>`;
+  }).join('');
+}
+
+// ─── LOOKUP HELPERS ──────────────────────────────────────────────
+function findL1(l1Id) { return state.l1s.find(x => x.id === l1Id); }
+function findL2(l1Id, l2Id) { return findL1(l1Id)?.subcategories?.find(x => x.id === l2Id); }
+function findSec(l1Id, l2Id, secId) { return findL2(l1Id, l2Id)?.sections?.find(x => x.id === secId); }
+function findItem(l1Id, l2Id, secId, itemId) { return findSec(l1Id, l2Id, secId)?.items?.find(x => x.id === itemId); }
+
+// ─── NAV RENDER ──────────────────────────────────────────────────
+function renderNav() {
+  const nav = document.getElementById('sideNav');
+  const q = document.getElementById('sideSearch').value.toLowerCase().trim();
+  let html = '';
+
+  for (const l1 of state.l1s) {
+    const l1Open = openL1.has(l1.id) || !!q;
+    html += renderL1(l1, q, l1Open);
+  }
+
+  if (state.isAdmin && !q) {
+    html += `<button style="display:block;width:100%;padding:9px 14px;background:none;border:none;border-top:1px solid rgba(255,255,255,0.07);cursor:pointer;color:rgba(133,196,65,0.55);font-size:0.78rem;font-weight:600;text-align:left;font-family:'Source Sans Pro',Arial,sans-serif" onclick="showAddL1()">+ Add Main Category</button>`;
+  }
+
+  nav.innerHTML = html;
+}
+
+function renderL1(l1, q, forceOpen) {
+  const isOpen = openL1.has(l1.id) || forceOpen;
+  const subs = (l1.subcategories || []);
+
+  // For search: filter subs that have matching content
+  const visibleSubs = q ? subs.filter(l2 => subMatchesSearch(l2, q)) : subs;
+
+  // Also check if l1 name itself matches (show all subs if l1 name matches)
+  const l1NameMatches = q && l1.name.toLowerCase().includes(q);
+  const finalSubs = q ? (l1NameMatches ? subs : visibleSubs) : subs;
+
+  if (q && !l1NameMatches && !visibleSubs.length) return ''; // hide entirely
+
+  let inner = '';
+  if (isOpen || q) {
+    // L1 with no subcategories shows sections directly
+    if (!subs.length) {
+      // General-style: show sections at L2 level
+      inner = `<div style="padding:4px 0">
+        ${state.isAdmin ? `<button style="display:block;width:100%;padding:5px 10px 5px 26px;background:none;border:none;cursor:pointer;color:rgba(133,196,65,0.6);font-size:0.75rem;text-align:left" onclick="showAddL2('${l1.id}')">+ Add Subcategory</button>` : ''}
+      </div>`;
+    } else {
+      inner = finalSubs.map(l2 => renderL2(l1, l2, q)).join('');
+      if (state.isAdmin && !q) {
+        inner += `<button style="display:block;width:100%;padding:5px 10px 5px 26px;background:none;border:none;cursor:pointer;color:rgba(133,196,65,0.5);font-size:0.75rem;text-align:left" onclick="showAddL2('${l1.id}')">+ Add Subcategory</button>`;
+      }
+    }
+  }
+
+  return `
+    <div class="l1-item" onclick="toggleL1('${l1.id}')">
+      <span class="l1-chevron${isOpen?' open':''}">▶</span>
+      <span class="l1-name">${escHtml(l1.name)}</span>
+      ${state.isAdmin ? `<span class="l1-actions" onclick="event.stopPropagation()">
+        <button class="l1-action-btn" title="Move up" onclick="moveL1('${l1.id}',-1)">▲</button>
+        <button class="l1-action-btn" title="Move down" onclick="moveL1('${l1.id}',1)">▼</button>
+        <button class="l1-action-btn" title="Edit" onclick="showEditL1('${l1.id}')">✏</button>
+        <button class="l1-action-btn" title="Remove" onclick="confirmDeleteL1('${l1.id}')">🗑</button>
+      </span>` : ''}
+    </div>
+    ${inner}
+  `;
+}
+
+function renderL2(l1, l2, q) {
+  const isOpen = openL2.has(l2.id) || !!q;
+  const secs = [...(l2.sections || [])].sort((a,b) => a.name.localeCompare(b.name));
+
+  let inner = '';
+  if (isOpen || q) {
+    inner = secs.map(sec => renderL3(l1, l2, sec, q)).join('');
+    if (state.isAdmin && !q) {
+      inner += `<button style="display:block;width:100%;padding:4px 10px 4px 36px;background:none;border:none;cursor:pointer;color:rgba(133,196,65,0.45);font-size:0.74rem;text-align:left" onclick="showAddSection('${l1.id}','${l2.id}')">+ Add Section</button>`;
+    }
+  }
+
+  return `
+    <div class="l2-item${openL2.has(l2.id)?' active':''}" onclick="toggleL2('${l2.id}','${l1.id}')">
+      <span class="l2-chevron${isOpen?' open':''}">▶</span>
+      <span class="l2-name">${escHtml(l2.name)}</span>
+      ${state.isAdmin ? `<span class="l2-actions" onclick="event.stopPropagation()">
+        <button class="l1-action-btn" title="Edit" onclick="showEditL2('${l1.id}','${l2.id}')">✏</button>
+        <button class="l1-action-btn" title="Remove" onclick="confirmDeleteL2('${l1.id}','${l2.id}')">🗑</button>
+      </span>` : ''}
+    </div>
+    ${inner}
+  `;
+}
+
+function renderL3(l1, l2, sec, q) {
+  const isOpen = openL3.has(sec.id) || !!q;
+  const visibleItems = sec.items
+    .filter(item => (state.isAdmin || !item.inProgress) && (!q || item.title.toLowerCase().includes(q) || sec.name.toLowerCase().includes(q) || l2.name.toLowerCase().includes(q)))
+    .sort((a,b) => a.title.localeCompare(b.title));
+
+  if (q && !visibleItems.length && !sec.name.toLowerCase().includes(q)) return '';
+
+  let itemsHtml = '';
+  if (isOpen || q) {
+    itemsHtml = visibleItems.map(item => renderL4(l1, l2, sec, item)).join('');
+    if (state.isAdmin && !q) {
+      itemsHtml += `<button class="l4-add-btn" style="display:block" onclick="showAddSubsection('${l1.id}','${l2.id}','${sec.id}')">+ Add item</button>`;
+    }
+  }
+
+  return `
+    <div class="l3-item" onclick="toggleL3('${sec.id}','${l2.id}','${l1.id}')">
+      <span class="l3-chevron${isOpen?' open':''}">▶</span>
+      <span class="l3-name">${escHtml(sec.name)}</span>
+      ${state.isAdmin ? `<span class="l3-actions" onclick="event.stopPropagation()">
+        <button class="l1-action-btn" title="Edit" onclick="showEditSection('${l1.id}','${l2.id}','${sec.id}')">✏</button>
+        <button class="l1-action-btn" title="Remove" onclick="confirmDeleteSection('${l1.id}','${l2.id}','${sec.id}')">🗑</button>
+      </span>` : ''}
+    </div>
+    ${itemsHtml}
+  `;
+}
+
+function renderL4(l1, l2, sec, item) {
+  const isActive = currentItemId === item.id;
+  return `
+    <div class="l4-item${isActive?' active':''}${item.inProgress?' ':''}">
+      <div class="l4-dot${item.inProgress?' in-progress':''}"></div>
+      <span class="l4-name" onclick="showToolDetail('${l1.id}','${l2.id}','${sec.id}','${item.id}')">${escHtml(item.title)}</span>
+      ${item.link ? `<a class="l4-link-btn" href="${escHtml(item.link)}" target="_blank" onclick="event.stopPropagation()" title="Open tool">🔗</a>` : ''}
+      ${state.isAdmin ? `<span class="l4-actions">
+        <button class="l4-action-btn" onclick="showEditSubsection('${l1.id}','${l2.id}','${sec.id}','${item.id}')">✏</button>
+        <button class="l4-action-btn" onclick="confirmDeleteSubsection('${l1.id}','${l2.id}','${sec.id}','${item.id}')">🗑</button>
+      </span>` : ''}
+    </div>
+  `;
+}
+
+function subMatchesSearch(l2, q) {
+  if (l2.name.toLowerCase().includes(q)) return true;
+  for (const sec of l2.sections || []) {
+    if (sec.name.toLowerCase().includes(q)) return true;
+    for (const item of sec.items || []) {
+      if (item.title.toLowerCase().includes(q)) return true;
+    }
+  }
+  return false;
+}
+
+function toggleL1(id) { openL1.has(id) ? openL1.delete(id) : openL1.add(id); renderNav(); }
+function toggleL2(id) { openL2.has(id) ? openL2.delete(id) : openL2.add(id); renderNav(); }
+function toggleL3(id) { openL3.has(id) ? openL3.delete(id) : openL3.add(id); renderNav(); }
+
+function renderAdminLogsNav() {
+  const nav = document.getElementById('adminLogsNav');
+  if (!state.isAdmin) { nav.innerHTML = ''; return; }
+  let html = `<div class="admin-nav-item ${currentView==='logs'?'active':''}" onclick="showAdminLogs()">⚙ Admin Logs</div>`;
+  if (state.isSuperAdmin) {
+    html += `<div class="admin-nav-item" style="background:rgba(124,47,247,0.15);border-color:rgba(200,122,255,0.3);color:#c87aff;margin-top:6px" onclick="openPasswordManager()">★ Password Manager</div>`;
+  }
+  nav.innerHTML = html;
+}
+
+// ─── TOOL DETAIL ─────────────────────────────────────────────────
+function showToolDetail(l1Id, l2Id, secId, itemId) {
+  const l1 = findL1(l1Id), l2 = findL2(l1Id, l2Id), sec = findSec(l1Id, l2Id, secId), item = findItem(l1Id, l2Id, secId, itemId);
+  if (!item) return;
+  currentItemId = itemId; currentView = 'item';
+
+  // Ensure nav is open to this item
+  openL1.add(l1Id); openL2.add(l2Id); openL3.add(secId);
+  renderNav(); renderFavorites(); renderAdminLogsNav();
+
+  document.getElementById('welcomeState').style.display = 'none';
+  document.getElementById('toolDetailView').style.display = '';
+  document.getElementById('adminLogsView').style.display = 'none';
+
+  const favd = isFav(itemId);
+
+  document.getElementById('toolDetailView').innerHTML = `
+    <div class="breadcrumb">
+      <span>${escHtml(l1.name)}</span><span>›</span>
+      <span>${escHtml(l2.name)}</span><span>›</span>
+      <span>${escHtml(sec.name)}</span>
+    </div>
+    <div class="tool-detail">
+      <div class="tool-detail-header">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+              <div class="tool-detail-title">${escHtml(item.title)}</div>
+              ${item.inProgress ? '<span class="ip-badge">🔧 In Progress</span>' : ''}
+              <button class="fav-btn${favd?' is-fav':''}" title="${favd?'Remove from Favorites':'Add to Favorites'}"
+                onclick="toggleFavorite('${l1Id}','${l2Id}','${secId}','${itemId}')">${favd?'⭐':'☆'}</button>
+            </div>
+            <div class="tool-meta-item" style="margin-top:5px;color:#aaa;font-size:0.78rem">🕐 Last Updated: ${escHtml(item.lastUpdated||'—')}</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-shrink:0;align-items:center;flex-wrap:wrap">
+            ${item.link ? `<a href="${escHtml(item.link)}" target="_blank" class="btn btn-primary btn-sm">🔗 Open Tool</a>` : ''}
+            ${!item.hiddenFields?.includes('demo') && item.demoLink ? `<a href="${escHtml(item.demoLink)}" target="_blank" class="btn btn-sm" style="background:#0d9389;color:#fff">▶ Demo</a>` : ''}
+            ${state.isAdmin ? `<button class="btn btn-sm" style="background:#e8f5e0;color:#1a6a15;border:1px solid #b2d98e" onclick="showEditSubsection('${l1Id}','${l2Id}','${secId}','${itemId}')">Edit</button>` : ''}
+          </div>
+        </div>
+      </div>
+      ${!item.hiddenFields?.includes('desc') ? `
+      <div class="detail-section">
+        <div class="detail-label">Description</div>
+        ${item.desc ? `<div class="desc-rendered">${item.desc}</div>${extractScreenshots(item.desc)}` : '<p class="detail-empty">No description provided.</p>'}
+      </div>` : ''}
+      ${!item.hiddenFields?.includes('perms') ? `
+      <div class="detail-section">
+        <div class="detail-label">Permissions Required</div>
+        ${item.perms ? `<div class="desc-rendered">${item.perms}</div>${extractScreenshots(item.perms)}` : '<p class="detail-empty">No permissions specified.</p>'}
+      </div>` : ''}
+      ${!item.hiddenFields?.includes('config') ? `
+      <div class="detail-section">
+        <div class="detail-label">Where / How to Configure</div>
+        ${item.config ? `<div class="desc-rendered">${item.config}</div>${extractScreenshots(item.config)}` : '<p class="detail-empty">No configuration notes provided.</p>'}
+      </div>` : ''}
+      ${!item.hiddenFields?.includes('kb') ? `
+      <div class="detail-section">
+        <div class="detail-label">Related KB Articles</div>
+        ${item.kbArticles?.length
+          ? `<div class="kb-articles-list">${item.kbArticles.map(kb => `<div class="kb-article-item">📄 ${kb.link?`<a href="${escHtml(kb.link)}" target="_blank">${escHtml(kb.name)}</a>`:escHtml(kb.name)}</div>`).join('')}</div>`
+          : '<p class="detail-empty">No KB articles linked.</p>'}
+      </div>` : ''}
+    </div>
+    <div class="detail-footer">
+      <div class="detail-footer-icon">💬</div>
+      <div class="detail-footer-text">
+        Do you have a suggestion for a training resource, internal tool, configurable setting, or defined process to add or update in the Internal Toolbox?<br>
+        Please submit your request through the workflow in <a href="https://greenshades.slack.com/archives/C0B172MT8CQ" target="_blank">#forum-internal-toolbox</a>.
+      </div>
+    </div>
+  `;
+}
+
+// ─── ADMIN LOGS ──────────────────────────────────────────────────
+let logSortCol = 0, logSortAsc = false;
+let logColFilters = ['','','','','',''];
+
+function showAdminLogs() {
+  currentView = 'logs'; currentItemId = null;
+  document.getElementById('welcomeState').style.display = 'none';
+  document.getElementById('toolDetailView').style.display = 'none';
+  document.getElementById('adminLogsView').style.display = '';
+  renderNav(); renderAdminLogsNav(); renderAdminLogsTable();
+}
+
+function renderAdminLogsTable() {
+  const cols = ['Date/Time','User','Type','Action','Title','Reason'];
+  const keys = ['datetime','user','type','action','title','reason'];
+
+  const hasFilters = logColFilters.some(f => f);
+  const filteredLogs = getFilteredSortedLogs();
+
+  document.getElementById('adminLogsView').innerHTML = `
+    <div class="page-header">
+      <h1>Admin Logs</h1>
+      <div style="display:flex;align-items:center;gap:10px">
+        <span id="logCount" style="font-size:0.8rem;color:#888">${filteredLogs.length} record${filteredLogs.length!==1?'s':''}</span>
+        ${hasFilters ? `<button class="btn btn-secondary btn-sm" onclick="clearLogFilters()">Clear Filters</button>` : ''}
+      </div>
+    </div>
+    <div class="logs-table-wrap">
+      <table id="logsTable">
+        <thead>
+          <tr>
+            ${cols.map((c,i) => `
+              <th onclick="logSortCol=${i};logSortAsc=logSortCol===${i}?!logSortAsc:false;rebuildLogsBody()" style="user-select:none;white-space:nowrap">
+                ${c}<span class="sort-icon">${logSortCol===i?(logSortAsc?'↑':'↓'):'⇅'}</span>
+              </th>`).join('')}
+          </tr>
+          <tr class="log-filter-row">
+            ${cols.map((c,i) => {
+              if (i === 2) {
+                return `<th style="padding:4px 6px;background:#0d2f47">
+                  <select class="log-col-filter" data-col="${i}" onchange="updateLogFilter(${i},this.value)">
+                    <option value="">All</option>
+                    <option value="Main Category" ${logColFilters[2]==='Main Category'?'selected':''}>Main Category</option>
+                    <option value="Subcategory" ${logColFilters[2]==='Subcategory'?'selected':''}>Subcategory</option>
+                    <option value="Section" ${logColFilters[2]==='Section'?'selected':''}>Section</option>
+                    <option value="Item" ${logColFilters[2]==='Item'?'selected':''}>Item</option>
+                  </select></th>`;
+              }
+              if (i === 3) {
+                return `<th style="padding:4px 6px;background:#0d2f47">
+                  <select class="log-col-filter" data-col="${i}" onchange="updateLogFilter(${i},this.value)">
+                    <option value="">All</option>
+                    <option value="added" ${logColFilters[3]==='added'?'selected':''}>Added</option>
+                    <option value="edited" ${logColFilters[3]==='edited'?'selected':''}>Edited</option>
+                    <option value="removed" ${logColFilters[3]==='removed'?'selected':''}>Removed</option>
+                  </select></th>`;
+              }
+              return `<th style="padding:4px 6px;background:#0d2f47">
+                <input class="log-col-filter" type="text" placeholder="Filter…" data-col="${i}" value="${escHtml(logColFilters[i]||'')}"
+                  oninput="updateLogFilter(${i},this.value)"></th>`;
+            }).join('')}
+          </tr>
+        </thead>
+        <tbody id="logsTbody">
+          ${buildLogsRows(filteredLogs)}
+        </tbody>
+      </table>
+    </div>`;
+}
+
+function getFilteredSortedLogs() {
+  const keys = ['datetime','user','type','action','title','reason'];
+  let logs = state.logs.filter(l => keys.every((k,i) => {
+    const fv = (logColFilters[i]||'').toLowerCase().trim();
+    return !fv || (l[k]||'').toLowerCase().includes(fv);
+  }));
+  logs.sort((a,b) => { const cmp=(a[keys[logSortCol]]||'').localeCompare(b[keys[logSortCol]]||''); return logSortAsc?cmp:-cmp; });
+  return logs;
+}
+
+function buildLogsRows(logs) {
+  return logs.length ? logs.map(l => `
+    <tr>
+      <td style="white-space:nowrap;font-size:0.8rem">${escHtml(l.datetime)}</td>
+      <td>${escHtml(l.user)}</td>
+      <td><span class="type-badge type-${l.type.replace(/ /g,"-").toLowerCase()}">${l.type}</span></td>
+      <td><span class="action-${l.action}">${l.action}</span></td>
+      <td>${escHtml(l.title)}</td>
+      <td style="max-width:250px;font-size:0.82rem;color:#666" class="log-reason">${escHtml(l.reason||'—')}</td>
+    </tr>`).join('') : '<tr><td colspan="6" class="empty-state">No log entries found.</td></tr>';
+}
+
+function updateLogFilter(col, value) {
+  logColFilters[col] = value;
+  rebuildLogsBody();
+}
+
+function clearLogFilters() {
+  logColFilters = ['','','','','',''];
+  renderAdminLogsTable();
+}
+
+function rebuildLogsBody() {
+  const tbody = document.getElementById('logsTbody');
+  const countEl = document.getElementById('logCount');
+  if (!tbody) return;
+  const logs = getFilteredSortedLogs();
+  tbody.innerHTML = buildLogsRows(logs);
+  if (countEl) countEl.textContent = `${logs.length} record${logs.length!==1?'s':''}`;
+  // Update sort icons in headers
+  document.querySelectorAll('#logsTable thead tr:first-child th .sort-icon').forEach((el,i) => {
+    el.textContent = logSortCol===i ? (logSortAsc?'↑':'↓') : '⇅';
+  });
+}
+
+// ─── GENERIC NAME MODAL ──────────────────────────────────────────
+let _nameSaveCallback = null;
+function openNameModal(title, label, placeholder, existingVal, hasReason, saveCb) {
+  document.getElementById('nameModalTitle').textContent = title;
+  document.getElementById('nameModalLabel').textContent = label;
+  document.getElementById('nameInput').value = existingVal || '';
+  document.getElementById('nameInput').placeholder = placeholder || '';
+  document.getElementById('nameReasonRow').style.display = hasReason ? '' : 'none';
+  document.getElementById('nameReasonInput').value = '';
+  _nameSaveCallback = saveCb;
+  document.getElementById('nameSaveBtn').onclick = () => {
+    const val = document.getElementById('nameInput').value.trim();
+    const reason = document.getElementById('nameReasonInput').value.trim();
+    if (!val) { showToast('Name is required.', 'warning'); return; }
+    if (hasReason && !reason) { showToast('Please provide a reason for this change.', 'warning'); document.getElementById('nameReasonInput').focus(); return; }
+    saveCb(val, reason);
+    closeModal('nameModal');
+  };
+  openModal('nameModal');
+  setTimeout(() => document.getElementById('nameInput').focus(), 100);
+}
+
+// ─── L1 CRUD ─────────────────────────────────────────────────────
+function moveL1(l1Id, dir) {
+  const idx = state.l1s.findIndex(x => x.id === l1Id);
+  const newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= state.l1s.length) return;
+  [state.l1s[idx], state.l1s[newIdx]] = [state.l1s[newIdx], state.l1s[idx]];
+  saveState(); renderNav();
+}
+
+function showAddL1() {
+  openNameModal('Add Main Category','Category Name','e.g. General','',false,(val)=>{
+    const newL1 = { id: uid(), name: val, subcategories: [] };
+    state.l1s.push(newL1);
+    addLog('Main Category','added',val);
+    saveState(); renderNav(); showToast('Main category added.','success');
+  });
+}
+
+function showEditL1(l1Id) {
+  const l1 = findL1(l1Id);
+  openNameModal('Edit Main Category','Category Name','e.g. General', l1.name, true, (val, reason) => {
+    const old = l1.name; l1.name = val;
+    addLog('Main Category','edited',`${old} → ${val}`,reason);
+    saveState(); renderNav(); showToast('Category updated.','success');
+  });
+}
+
+function confirmDeleteL1(l1Id) {
+  const l1 = findL1(l1Id);
+  document.getElementById('confirmTitle').textContent = 'Remove Main Category';
+  document.getElementById('confirmText').textContent = `Remove "${l1.name}" and all its subcategories, sections, and items? This cannot be undone.`;
+  document.getElementById('confirmReason').value = '';
+  document.getElementById('confirmDeleteBtn').onclick = () => {
+    const reason = document.getElementById('confirmReason').value.trim();
+    if (!reason) { showToast('Please provide a reason.','warning'); return; }
+    addLog('Main Category','removed',l1.name,reason);
+    state.l1s = state.l1s.filter(x=>x.id!==l1Id);
+    saveState(); closeModal('confirmModal'); renderNav();
+    if (currentView==='item') { currentItemId=null; document.getElementById('toolDetailView').style.display='none'; document.getElementById('welcomeState').style.display=''; }
+    showToast('Main category removed.','warning');
+  };
+  openModal('confirmModal');
+}
+
+// ─── L2 CRUD ─────────────────────────────────────────────────────
+function showAddL2(l1Id) {
+  openNameModal('Add Subcategory','Subcategory Name','e.g. Payroll','',false,(val)=>{
+    const l1 = findL1(l1Id);
+    const newL2 = { id: uid(), name: val, sections: DEFAULT_SECTIONS.map(s=>({id:uid(),name:s,items:[]})) };
+    l1.subcategories.push(newL2);
+    l1.subcategories.sort((a,b)=>a.name.localeCompare(b.name));
+    addLog('Subcategory','added',`${val} (in ${l1.name})`);
+    saveState(); renderNav(); showToast('Subcategory added.','success');
+  });
+}
+function showEditL2(l1Id, l2Id) {
+  const l1 = findL1(l1Id), l2 = findL2(l1Id, l2Id);
+  openNameModal('Edit Subcategory','Subcategory Name','',l2.name,true,(val,reason)=>{
+    const old = l2.name; l2.name = val;
+    l1.subcategories.sort((a,b)=>a.name.localeCompare(b.name));
+    addLog('Subcategory','edited',`${old} → ${val} (in ${l1.name})`,reason);
+    saveState(); renderNav(); showToast('Subcategory updated.','success');
+  });
+}
+function confirmDeleteL2(l1Id, l2Id) {
+  const l1 = findL1(l1Id), l2 = findL2(l1Id, l2Id);
+  document.getElementById('confirmTitle').textContent = 'Remove Subcategory';
+  document.getElementById('confirmText').textContent = `Remove "${l2.name}" from ${l1.name}? All sections and items inside will be removed.`;
+  document.getElementById('confirmReason').value = '';
+  document.getElementById('confirmDeleteBtn').onclick = () => {
+    const reason = document.getElementById('confirmReason').value.trim();
+    if (!reason) { showToast('Please provide a reason.','warning'); return; }
+    addLog('Subcategory','removed',`${l2.name} (in ${l1.name})`,reason);
+    l1.subcategories = l1.subcategories.filter(x=>x.id!==l2Id);
+    saveState(); closeModal('confirmModal'); renderNav();
+    showToast('Subcategory removed.','warning');
+  };
+  openModal('confirmModal');
+}
+
+// ─── SECTION CRUD ────────────────────────────────────────────────
+function showAddSection(l1Id, l2Id) {
+  const l1 = findL1(l1Id), l2 = findL2(l1Id, l2Id);
+  openNameModal('Add Section','Section Name','e.g. Documentation','',false,(val)=>{
+    l2.sections.push({id:uid(),name:val,items:[]});
+    addLog('Section','added',`${val} (${l1.name} › ${l2.name})`);
+    saveState(); openL2.add(l2Id); renderNav(); showToast('Section added.','success');
+  });
+}
+function showEditSection(l1Id, l2Id, secId) {
+  const l1=findL1(l1Id),l2=findL2(l1Id,l2Id),sec=findSec(l1Id,l2Id,secId);
+  openNameModal('Edit Section','Section Name','',sec.name,true,(val,reason)=>{
+    const old=sec.name; sec.name=val;
+    addLog('Section','edited',`${old} → ${val} (${l1.name} › ${l2.name})`,reason);
+    saveState(); renderNav(); showToast('Section updated.','success');
+  });
+}
+function confirmDeleteSection(l1Id, l2Id, secId) {
+  const l1=findL1(l1Id),l2=findL2(l1Id,l2Id),sec=findSec(l1Id,l2Id,secId);
+  document.getElementById('confirmTitle').textContent = 'Remove Section';
+  document.getElementById('confirmText').textContent = `Remove section "${sec.name}" from ${l2.name}? All items inside will be removed.`;
+  document.getElementById('confirmReason').value = '';
+  document.getElementById('confirmDeleteBtn').onclick = () => {
+    const reason = document.getElementById('confirmReason').value.trim();
+    if (!reason) { showToast('Please provide a reason.','warning'); return; }
+    addLog('Section','removed',`${sec.name} (${l1.name} › ${l2.name})`,reason);
+    l2.sections = l2.sections.filter(x=>x.id!==secId);
+    saveState(); closeModal('confirmModal'); renderNav();
+    showToast('Section removed.','warning');
+  };
+  openModal('confirmModal');
+}
+
+// ─── SUBSECTION CRUD ─────────────────────────────────────────────
+let editSubCtx = { l1Id:null, l2Id:null, secId:null, itemId:null };
+let hiddenFieldsState = [];
+let subFormSnapshot = null;
+
+function getSubFormSnapshot() {
+  return JSON.stringify({ title:document.getElementById('subTitle').value, link:document.getElementById('subLink').value, desc:document.getElementById('subDesc').innerHTML, demo:document.getElementById('subDemo').value, perms:document.getElementById('subPerms').innerHTML, config:document.getElementById('subConfig').innerHTML, inProgress:document.getElementById('subInProgress').checked, hidden:[...hiddenFieldsState], kb:getKBRows() });
+}
+function isSubFormDirty() { return subFormSnapshot && getSubFormSnapshot() !== subFormSnapshot; }
+function attemptCloseSubModal() { if (isSubFormDirty()) openModal('unsavedModal'); else forceCloseSubModal(); }
+function discardSubModal() { closeModal('unsavedModal'); forceCloseSubModal(); }
+function saveFromUnsaved() { closeModal('unsavedModal'); saveSubsection(); }
+function forceCloseSubModal() { closeModal('subsectionModal'); subFormSnapshot = null; }
+
+function toggleField(field) {
+  const idx = hiddenFieldsState.indexOf(field);
+  idx !== -1 ? hiddenFieldsState.splice(idx,1) : hiddenFieldsState.push(field);
+  applyFieldVisibility(field);
+}
+function applyFieldVisibility(field) {
+  const hidden = hiddenFieldsState.includes(field);
+  document.getElementById('fieldContent_'+field).style.display = hidden?'none':'';
+  document.getElementById('fieldHidden_'+field).style.display = hidden?'':'none';
+  const btn = document.getElementById('toggleBtn_'+field);
+  btn.textContent = hidden?'Show Field':'Hide Field';
+  btn.classList.toggle('hidden-field', hidden);
+}
+function applyAllFieldVisibility() { ['desc','demo','perms','config','kb'].forEach(applyFieldVisibility); }
+
+function showAddSubsection(l1Id, l2Id, secId) {
+  editSubCtx = {l1Id, l2Id, secId, itemId:null};
+  document.getElementById('subModalTitle').textContent = 'Add Item';
+  hiddenFieldsState = []; clearSubForm(); applyAllFieldVisibility();
+  document.getElementById('subReasonRow').style.display = 'none';
+  document.getElementById('subSaveBtn').onclick = saveSubsection;
+  openModal('subsectionModal');
+  setTimeout(()=>{ document.getElementById('subTitle').focus(); subFormSnapshot = getSubFormSnapshot(); },150);
+}
+function showEditSubsection(l1Id, l2Id, secId, itemId) {
+  const item = findItem(l1Id, l2Id, secId, itemId); if (!item) return;
+  editSubCtx = {l1Id, l2Id, secId, itemId};
+  document.getElementById('subModalTitle').textContent = 'Edit Item';
+  document.getElementById('subTitle').value = item.title||'';
+  document.getElementById('subLink').value = item.link||'';
+  document.getElementById('subDesc').innerHTML = item.desc||'';
+  document.getElementById('subDemo').value = item.demoLink||'';
+  document.getElementById('subPerms').innerHTML = item.perms||'';
+  document.getElementById('subConfig').innerHTML = item.config||'';
+  document.getElementById('subInProgress').checked = !!item.inProgress;
+  document.getElementById('subReason').value = '';
+  document.getElementById('subReasonRow').style.display = '';
+  hiddenFieldsState = [...(item.hiddenFields||[])]; applyAllFieldVisibility();
+  renderKBRows(item.kbArticles||[]);
+  document.getElementById('subSaveBtn').onclick = saveSubsection;
+  openModal('subsectionModal');
+  setTimeout(()=>{ subFormSnapshot = getSubFormSnapshot(); },150);
+}
+function clearSubForm() {
+  ['subTitle','subLink','subDemo','subReason'].forEach(id=>document.getElementById(id).value='');
+  document.getElementById('subDesc').innerHTML='';
+  document.getElementById('subPerms').innerHTML='';
+  document.getElementById('subConfig').innerHTML='';
+  document.getElementById('subInProgress').checked=false;
+  renderKBRows([]);
+}
+function saveSubsection() {
+  const title = document.getElementById('subTitle').value.trim();
+  if (!title) { showToast('Title is required.','warning'); return; }
+  const {l1Id,l2Id,secId,itemId} = editSubCtx;
+  const l1=findL1(l1Id),l2=findL2(l1Id,l2Id),sec=findSec(l1Id,l2Id,secId);
+  if (!sec) return;
+  const reason = document.getElementById('subReason').value.trim();
+  if (itemId && !reason) { showToast('Please provide a reason for this change.', 'warning'); document.getElementById('subReason').focus(); return; }
+  const itemData = { title, link:document.getElementById('subLink').value.trim(), desc:document.getElementById('subDesc').innerHTML, demoLink:document.getElementById('subDemo').value.trim(), perms:document.getElementById('subPerms').innerHTML, config:document.getElementById('subConfig').innerHTML, inProgress:document.getElementById('subInProgress').checked, hiddenFields:[...hiddenFieldsState], kbArticles:getKBRows(), lastUpdated:nowEST() };
+  if (itemId) {
+    const item = sec.items.find(i=>i.id===itemId);
+    Object.assign(item, itemData);
+    addLog('Item','edited',`${title} (${l1.name} › ${l2.name} › ${sec.name})`,reason);
+    showToast('Item updated.','success'); forceCloseSubModal();
+    if (currentItemId===itemId) showToolDetail(l1Id,l2Id,secId,itemId);
+    else renderNav();
+  } else {
+    sec.items.push({id:uid(),...itemData});
+    addLog('Item','added',`${title} (${l1.name} › ${l2.name} › ${sec.name})`);
+    showToast('Item added.','success'); forceCloseSubModal(); renderNav();
+  }
+  saveState();
+}
+function confirmDeleteSubsection(l1Id, l2Id, secId, itemId) {
+  const l1=findL1(l1Id),l2=findL2(l1Id,l2Id),sec=findSec(l1Id,l2Id,secId),item=findItem(l1Id,l2Id,secId,itemId);
+  if (!item) return;
+  document.getElementById('confirmTitle').textContent = 'Remove Item';
+  document.getElementById('confirmText').textContent = `Remove "${item.title}" from ${sec.name}?`;
+  document.getElementById('confirmReason').value = '';
+  document.getElementById('confirmDeleteBtn').onclick = () => {
+    const reason = document.getElementById('confirmReason').value.trim();
+    if (!reason) { showToast('Please provide a reason.','warning'); return; }
+    addLog('Item','removed',`${item.title} (${l1.name} › ${l2.name} › ${sec.name})`,reason);
+    sec.items = sec.items.filter(i=>i.id!==itemId);
+    saveState(); closeModal('confirmModal');
+    if (currentItemId===itemId) { currentItemId=null; document.getElementById('toolDetailView').style.display='none'; document.getElementById('welcomeState').style.display=''; }
+    renderNav(); showToast('Item removed.','warning');
+  };
+  openModal('confirmModal');
+}
+
+// ─── KB ROWS ─────────────────────────────────────────────────────
+function renderKBRows(kbs) {
+  const wrap = document.getElementById('kbEntriesWrap');
+  wrap.innerHTML = kbs.map((kb,i)=>`<div class="kb-entry-row" id="kbrow_${i}"><input type="text" placeholder="KB Article Name" value="${escHtml(kb.name||'')}" id="kb_name_${i}"><input type="url" placeholder="https://…" value="${escHtml(kb.link||'')}" id="kb_link_${i}"><button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button></div>`).join('');
+  wrap._count = kbs.length;
+}
+function addKBRow() {
+  const wrap = document.getElementById('kbEntriesWrap');
+  const i = wrap._count||0; wrap._count = i+1;
+  const row = document.createElement('div'); row.className='kb-entry-row'; row.id=`kbrow_${i}`;
+  row.innerHTML=`<input type="text" placeholder="KB Article Name" id="kb_name_${i}"><input type="url" placeholder="https://…" id="kb_link_${i}"><button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button>`;
+  wrap.appendChild(row);
+}
+function removeKBRow(i) { document.getElementById('kbrow_'+i)?.remove(); }
+function getKBRows() {
+  const rows = document.getElementById('kbEntriesWrap').querySelectorAll('.kb-entry-row');
+  const result=[];
+  rows.forEach(row=>{ const id=row.id.replace('kbrow_',''); const name=document.getElementById('kb_name_'+id)?.value.trim()||''; const link=document.getElementById('kb_link_'+id)?.value.trim()||''; if(name) result.push({name,link}); });
+  return result;
+}
+
+// ─── RICH EDITOR / IMAGES ────────────────────────────────────────
+function extractScreenshots(html) {
+  const div=document.createElement('div'); div.innerHTML=html;
+  const imgs=div.querySelectorAll('img'); if(!imgs.length) return '';
+  const items=[...imgs].map((img,i)=>`<div class="screenshot-item"><img class="screenshot-img" src="${escHtml(img.src)}" alt="Screenshot ${i+1}" onclick="openLightbox(this.src)"></div>`).join('');
+  return `<div class="screenshots-section"><div class="screenshots-label">📷 Screenshots (${imgs.length})</div><div class="screenshots-grid">${items}</div></div>`;
+}
+function handleDescPaste(e) { handleEditorPaste(e, 'subDesc'); }
+function handleEditorPaste(e, editorId) {
+  const items=e.clipboardData?.items; if(!items) return;
+  let hasImage=false;
+  for(const item of items){ if(item.type.startsWith('image/')){ hasImage=true; e.preventDefault(); insertImageFileTo(editorId, item.getAsFile()); } }
+  if(!hasImage){ e.preventDefault(); const html=e.clipboardData.getData('text/html'); const text=e.clipboardData.getData('text/plain'); if(html){ document.execCommand('insertHTML',false,sanitizePastedHtml(html)); } else { document.execCommand('insertText',false,text); } }
+}
+function handleEditorDrop(e, editorId) {
+  e.preventDefault();
+  const zoneId = editorId === 'subDesc' ? 'descDropZone' : 'configDropZone';
+  document.getElementById(zoneId)?.classList.remove('drag-over');
+  const files=e.dataTransfer?.files; if(files) insertImagesFromFilesTo(editorId, files);
+}
+function handleDescDrop(e) { handleEditorDrop(e, 'subDesc'); }
+function sanitizePastedHtml(html) {
+  const div=document.createElement('div'); div.innerHTML=html;
+  div.querySelectorAll('script,style,meta,link,object,embed,iframe').forEach(el=>el.remove());
+  div.querySelectorAll('*').forEach(el=>{[...el.attributes].forEach(attr=>{ if(attr.name.startsWith('on')) el.removeAttribute(attr.name); });});
+  return div.innerHTML;
+}
+function handleDescDrop(e) { handleEditorDrop(e, 'subDesc'); }
+function insertImagesFromFiles(files) { insertImagesFromFilesTo('subDesc', files); }
+function insertImagesFromFilesTo(editorId, files) { [...files].forEach(file=>{ if(file.type.startsWith('image/')) insertImageFileTo(editorId, file); }); }
+function insertImageFile(file) { insertImageFileTo('subDesc', file); }
+function insertImageFileTo(editorId, file) {
+  const reader=new FileReader();
+  reader.onload=(e)=>{ const editor=document.getElementById(editorId); const img=document.createElement('img'); img.src=e.target.result; img.alt='screenshot'; img.style.maxWidth='100%'; editor.appendChild(img); editor.scrollTop=editor.scrollHeight; showToast('Screenshot added.','success'); };
+  reader.readAsDataURL(file);
+}
+function openLightbox(src) { document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.getElementById('lightboxImg').src=''; }
+
+// ─── MODAL HELPERS ───────────────────────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+document.querySelectorAll('.modal-overlay').forEach(overlay=>{
+  overlay.addEventListener('click',e=>{ if(e.target!==overlay) return; if(overlay.id==='subsectionModal') attemptCloseSubModal(); else closeModal(overlay.id); });
+});
+
+// ─── TOAST ───────────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type='success') { const t=document.getElementById('toast'); t.textContent=msg; t.className=`toast ${type} show`; clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove('show'),3000); }
+
+// ─── UTILS ───────────────────────────────────────────────────────
+function escHtml(str) { if(!str) return ''; return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ─── BOOT ────────────────────────────────────────────────────────
+initState();
+try { getPasswords(); } catch(e) { localStorage.removeItem('toolbox_passwords'); }
+applyTheme();
+document.getElementById('adminToggleBtn').style.display = 'none';
+renderNav();
+renderAdminLogsNav();
+renderFavorites();
+if (state.favorites.length) { favOpen=true; document.getElementById('favList').style.display=''; document.getElementById('favToggleIcon').classList.add('open'); }
+setTimeout(() => document.getElementById('loginEmail').focus(), 100);
+
+// Load live data from GitHub (async — UI is already interactive from defaults/cache)
+loadFromGitHub().then(() => {
+  renderNav();
+  renderFavorites();
+  if (state.favorites.length) { favOpen=true; document.getElementById('favList').style.display=''; document.getElementById('favToggleIcon').classList.add('open'); }
+});
+</script>
+</body>
+</html>
