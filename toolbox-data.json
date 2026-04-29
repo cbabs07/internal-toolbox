@@ -332,12 +332,14 @@
                   "id": "_wx56wvzn2",
                   "title": "Sync Start Date",
                   "link": "",
-                  "desc": "This configuration allows a user to specify a date in which the sync should look back from.",
+                  "desc": "<!--StartFragment--><p data-start=\"54\" data-end=\"156\">This configuration allows users to define a start date from which the sync process will retrieve data.</p><p data-start=\"54\" data-end=\"156\"><br></p>\n<p data-start=\"158\" data-end=\"440\">This setting is particularly useful in scenarios where historical data contains inconsistencies or errors that the client does not wish to correct. By specifying a start date, the sync can be limited to only include data from that point forward, avoiding issues tied to legacy data.</p><p data-start=\"158\" data-end=\"440\"><br></p>\n<p data-start=\"442\" data-end=\"947\"><span data-start=\"442\" data-end=\"463\"><u>Example Use Case:</u></span><br data-start=\"463\" data-end=\"466\">\nA client uses a single child support garnishment code for multiple child support records per employee. This is not supported, as each record requires a unique identifier. To resolve this, the client may update future payroll configurations by assigning distinct codes (e.g., Child Support 1 (CS1), Child Support 2 (CS2), etc.). By setting the sync start date to align with this change, only compliant data will be processed, preventing partial failures caused by duplicate records.</p><p data-start=\"442\" data-end=\"947\"><br></p>\n<p data-start=\"949\" data-end=\"1184\">Please note that once a start date is configured, the sync process will only retrieve data from that date forward. Even if checksum tables are truncated to force a full sync, data prior to the specified start date will not be included.</p>\n<!--EndFragment-->",
                   "demoLink": "",
-                  "config": "To request this setting, please send up a case with the below information.",
+                  "config": "To request this setting, please send up a case with the below information:\r<div>\r</div><div><b>WSID: </b>The workspace ID(s) this setting needs to be configured for\r</div><div><b>Sync Start Date: </b>The stating date the sync will look back from.\r</div><div><b>Reason:</b> Detailed explanation as to why we are enabling this setting to ensure it fits the customer's needs.</div>",
                   "inProgress": false,
                   "hiddenFields": [
-                    "demo"
+                    "demo",
+                    "perms",
+                    "kb"
                   ],
                   "kbArticles": [
                     {
@@ -345,7 +347,8 @@
                       "link": ""
                     }
                   ],
-                  "lastUpdated": "04/27/2026, 07:08:28 PM"
+                  "lastUpdated": "04/29/2026, 09:55:59 AM",
+                  "perms": ""
                 }
               ]
             },
@@ -607,6 +610,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_pz9k0ux7d",
+      "datetime": "04/29/2026, 09:55:59 AM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "Sync Start Date (Products › Sync Portal › Configurable Settings)",
+      "reason": "Updating description"
+    },
     {
       "id": "_jkfygnaxb",
       "datetime": "04/29/2026, 09:53:45 AM",
