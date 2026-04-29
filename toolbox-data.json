@@ -229,17 +229,22 @@
                 {
                   "id": "_mgu3ky2us",
                   "title": "Custom Wage Type Request",
-                  "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=2f602e12-70a7-eb11-b1ac-000d3a3b2bd4",
+                  "link": "https://greenshades.sharepoint.com/sites/Product/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FProduct%2FShared%20Documents%2FSustainability%2FKnowledge%20Share%2FCustom%20Wage%20Type%20Details%2FTool&p=true&ga=1",
                   "desc": "This tool is designed for our support teams who need to request a new custom wage type for a specified client.&nbsp;<div><br></div><div>It provides a structured, searchable interface for browsing and selecting from over 7,000 tax codes across Federal, State, and Local jurisdictions, then exporting those selections into a formatted Excel file.&nbsp;<br><br>Start by entering one or more Workspace IDs, then choose the Custom Wage Type you are configuring:</div><div><ul><li>Earning — Select all taxes that should be EXEMPT from this wage type</li><li>Benefit/Deduction — Select all taxes the benefit/deduction should be considered PRE-TAX for</li><li>Imputed Income — Select all taxes the benefit should be SUBJECT TO</li></ul></div><div><br></div><div>Enter a name or description for the wage type, then choose which main tax categories to work with — Federal, State, Local, or any combination.</div><div><br></div><div>Tax codes are organized by Type → SubType → State, displayed in collapsible sections so you can focus on what's relevant. Within each section, you can select individual codes or use \"Select all\" at any level. Each grid supports filtering and sorting by any column.</div><div><br></div><div>When your selections are complete, export to Excel. The output includes a Summary sheet with your workspace details and all selected TaxIDs formatted for Postman, plus a detail sheet listing the full information for every selected tax code.</div><div><br></div><div><b>**Note** </b>This is a temporary tool that will simplify these requests until a more permanent solution is released. Product has already discussed how to handle these going forward.&nbsp;</div>",
                   "demoLink": "https://greenshades.sharepoint.com/sites/Product/_layouts/15/stream.aspx?id=%2Fsites%2FProduct%2FShared%20Documents%2FSustainability%2FKnowledge%20Share%2FCustom%20Wage%20Type%20Details%2FCustom%20Wage%20Tax%20Details%20Demo%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9337e941%2Df99c%2D4ee1%2Db49e%2Da8805b8909fd",
-                  "config": "To request a new custom wage, please send up a case with the below information:\r<div>\r</div><div><b>WSID: </b>The workspace ID(s) this wage needs to be configured for\r</div><div><b>Path: </b>The ticket path with the exported file from the tool</div><div><b>Brief explanation of the requirements: </b>This is to ensure that there are no taxes missed, even when using the tool&nbsp;</div>",
-                  "inProgress": true,
+                  "config": "To request a new custom wage, please send up a case with the below information:\n<div>\n</div><div><b>WSID: </b>The workspace ID(s) this wage needs to be configured for\n</div><div><b>Path: </b>The ticket path with the exported file from the tool</div><div><b>Brief explanation of the requirements: </b>This is to ensure that there are no taxes missed, even when using the tool&nbsp;</div>",
+                  "inProgress": false,
                   "hiddenFields": [
-                    "kb",
                     "perms"
                   ],
-                  "kbArticles": [],
-                  "lastUpdated": "04/29/2026, 11:38:27 AM",
+                  "kbArticles": [
+                    {
+                      "name": "Payroll: Request to create a custom Wage Type",
+                      "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=2f602e12-70a7-eb11-b1ac-000d3a3b2bd4",
+                      "type": "internal"
+                    }
+                  ],
+                  "lastUpdated": "04/29/2026, 11:40:42 AM",
                   "perms": ""
                 }
               ]
@@ -610,6 +615,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_sjj45wd6j",
+      "datetime": "04/29/2026, 11:40:42 AM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "Custom Wage Type Request (Products › Payroll › Internal Tools)",
+      "reason": "Adding KB and tool link"
+    },
     {
       "id": "_3m6s5qqe1",
       "datetime": "04/29/2026, 11:38:27 AM",
