@@ -234,17 +234,23 @@
                 {
                   "id": "_mgu3ky2us",
                   "title": "Custom Wage Type Request",
-                  "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=2f602e12-70a7-eb11-b1ac-000d3a3b2bd4",
-                  "desc": "",
+                  "link": "https://greenshades.sharepoint.com/:f:/s/Product/IgCk9iv-7LdlQ5_UDYx3lU1WASSRG-HHDhtjI_DoY4Cl-NE?e=fFSkFh",
+                  "desc": "TBD",
                   "demoLink": "https://greenshades.sharepoint.com/sites/Product/_layouts/15/stream.aspx?id=%2Fsites%2FProduct%2FShared%20Documents%2FSustainability%2FKnowledge%20Share%2FCustom%20Wage%20Type%20Details%2FCustom%20Wage%20Tax%20Details%20Demo%2Emp4&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E9337e941%2Df99c%2D4ee1%2Db49e%2Da8805b8909fd",
                   "config": "",
                   "inProgress": true,
                   "hiddenFields": [
-                    "kb",
-                    "config"
+                    "config",
+                    "perms"
                   ],
-                  "kbArticles": [],
-                  "lastUpdated": "04/28/2026, 12:03:20 PM"
+                  "kbArticles": [
+                    {
+                      "name": "Payroll: Request to create a custom Wage Type",
+                      "link": "https://greenshades.crm.dynamics.com/main.aspx?appid=1ec07c58-e95e-ea11-a811-000d3a37503c&forceUCI=1&newWindow=true&pagetype=entityrecord&etn=knowledgearticle&id=2f602e12-70a7-eb11-b1ac-000d3a3b2bd4"
+                    }
+                  ],
+                  "lastUpdated": "04/29/2026, 10:01:42 AM",
+                  "perms": ""
                 }
               ]
             },
@@ -612,6 +618,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_rdpx2b5r6",
+      "datetime": "04/29/2026, 10:01:42 AM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "Custom Wage Type Request (Products › Payroll › Internal Tools)",
+      "reason": "Updating links"
+    },
     {
       "id": "_opwg3n7ej",
       "datetime": "04/29/2026, 09:59:05 AM",
