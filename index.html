@@ -75,6 +75,12 @@ body.dark .detail-empty { color: #4a6070; }
 body.dark .detail-footer { background: #1a2733; border-color: #2e4055; }
 body.dark .detail-footer-text { color: #8aacbf; }
 body.dark .kb-article-item { background: #1e2c38; border-color: #2e4055; }
+body.dark .kb-type-internal { background: #1a2a4a; color: #7ab0f8; border-color: #2a4a7a; }
+body.dark .kb-type-client { background: #1a3a1a; color: #7ad07a; border-color: #2a5a2a; }
+body.dark .kb-type-toggle { border-color: #2e4055; }
+body.dark .kb-type-toggle button { background: #1a2733; color: #5a7a8a; }
+body.dark .kb-type-toggle button.active-internal { background: #1a2a4a; color: #7ab0f8; }
+body.dark .kb-type-toggle button.active-client { background: #1a3a1a; color: #7ad07a; }
 body.dark td { border-bottom-color: #2e4055; color: #c8d8e8; }
 body.dark tr:nth-child(even) td { background: #1e2c38; }
 body.dark tr:hover td { background: #243545; }
@@ -186,9 +192,12 @@ body.dark .pw-manager-section h3 { color: #85c441; border-bottom-color: #2e4055;
 
 /* SIDEBAR SEARCH */
 .sidebar-search { padding: 8px 10px; background: rgba(0,0,0,0.2); border-bottom: 1px solid rgba(255,255,255,0.07); }
-.sidebar-search input { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 5px 9px; color: #fff; font-size: 0.8rem; outline: none; }
-.sidebar-search input::placeholder { color: rgba(255,255,255,0.3); }
-.sidebar-search input:focus { border-color: var(--gs-green); background: rgba(255,255,255,0.12); }
+.sidebar-search input { width: 100%; background: #fff; border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 5px 9px; color: var(--gs-charcoal); font-size: 0.8rem; outline: none; }
+.sidebar-search input::placeholder { color: #999; }
+.sidebar-search input:focus { border-color: var(--gs-green); }
+body.dark .sidebar-search input { background: rgba(255,255,255,0.08); color: #fff; }
+body.dark .sidebar-search input::placeholder { color: rgba(255,255,255,0.3); }
+body.dark .sidebar-search input:focus { border-color: var(--gs-green); background: rgba(255,255,255,0.12); }
 
 /* MAIN CATEGORY (L1) */
 .l1-item {
@@ -299,6 +308,13 @@ body.dark .pw-manager-section h3 { color: #85c441; border-bottom-color: #2e4055;
 .kb-article-item { display: flex; align-items: center; gap: 8px; background: #f8f9fa; border: 1px solid #eee; border-radius: 4px; padding: 7px 12px; font-size: 0.85rem; }
 .kb-article-item a { color: var(--gs-green-dark); text-decoration: none; }
 .kb-article-item a:hover { color: var(--gs-green); text-decoration: underline; }
+.kb-type-badge { display: inline-flex; align-items: center; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+.kb-type-internal { background: #e8f0fd; color: #0a4a8a; border: 1px solid #b8d0f8; }
+.kb-type-client { background: #eafbe3; color: #1a6a15; border: 1px solid #b2d98e; }
+.kb-type-toggle { display: flex; border: 1px solid var(--gs-border); border-radius: 4px; overflow: hidden; flex-shrink: 0; }
+.kb-type-toggle button { background: #f5f5f5; border: none; cursor: pointer; font-size: 0.72rem; font-weight: 600; padding: 4px 9px; color: #888; transition: all 0.12s; white-space: nowrap; }
+.kb-type-toggle button.active-internal { background: #e8f0fd; color: #0a4a8a; }
+.kb-type-toggle button.active-client { background: #eafbe3; color: #1a6a15; }
 .breadcrumb { font-size: 0.78rem; color: #888; margin-bottom: 16px; display: flex; gap: 5px; align-items: center; flex-wrap: wrap; }
 .breadcrumb span { color: #bbb; }
 .back-btn { background: none; border: none; cursor: pointer; color: var(--gs-green-dark); font-size: 0.82rem; font-weight: 600; padding: 0; display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
@@ -324,8 +340,8 @@ label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gs-nav
 input[type=text], input[type=url], input[type=password], textarea, select { width: 100%; border: 1px solid var(--gs-border); border-radius: 4px; padding: 8px 10px; font-family: 'Source Sans Pro', Arial, sans-serif; font-size: 0.88rem; color: var(--gs-charcoal); outline: none; transition: border-color 0.15s; background: #fff; }
 input:focus, textarea:focus, select:focus { border-color: var(--gs-green); box-shadow: 0 0 0 2px rgba(133,196,65,0.15); }
 textarea { resize: vertical; min-height: 80px; }
-.kb-entry-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-.kb-entry-row input { flex: 1; }
+.kb-entry-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+.kb-entry-row input[type=text], .kb-entry-row input[type=url] { flex: 1; min-width: 120px; }
 .kb-remove-btn { background: none; border: none; cursor: pointer; color: #c00; font-size: 1rem; padding: 4px; }
 .kb-add-btn { background: none; border: 1px dashed #bbb; color: #888; cursor: pointer; font-size: 0.8rem; padding: 5px 10px; border-radius: 4px; }
 .kb-add-btn:hover { border-color: var(--gs-green); color: var(--gs-green-dark); }
@@ -381,13 +397,17 @@ textarea { resize: vertical; min-height: 80px; }
 .logs-table-wrap { overflow-x: auto; }
 .log-filter-row th { background: #0d2f47 !important; padding: 4px 6px !important; }
 .log-col-filter {
-  width: 100%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 3px; padding: 4px 7px; color: #fff; font-size: 0.75rem;
+  width: 100%; background: #fff; border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 3px; padding: 4px 7px; color: var(--gs-charcoal); font-size: 0.75rem;
   outline: none; font-family: 'Source Sans Pro', Arial, sans-serif;
 }
-.log-col-filter::placeholder { color: rgba(255,255,255,0.35); }
-.log-col-filter:focus { border-color: var(--gs-green); background: rgba(255,255,255,0.15); }
-select.log-col-filter option { background: var(--gs-navy); color: #fff; }
+.log-col-filter::placeholder { color: #999; }
+.log-col-filter:focus { border-color: var(--gs-green); }
+select.log-col-filter option { background: #fff; color: var(--gs-charcoal); }
+body.dark .log-col-filter { background: rgba(255,255,255,0.1); color: #fff; }
+body.dark .log-col-filter::placeholder { color: rgba(255,255,255,0.35); }
+body.dark .log-col-filter:focus { background: rgba(255,255,255,0.15); }
+body.dark select.log-col-filter option { background: var(--gs-navy); color: #fff; }
 table { border-collapse: collapse; width: 100%; font-size: 0.84rem; }
 th { background: var(--gs-navy); color: #fff; font-family: 'Source Sans Pro', Arial, sans-serif; font-weight: 700; padding: 9px 12px; text-align: left; cursor: pointer; user-select: none; white-space: nowrap; }
 th:hover { background: #0a3a5e; }
@@ -551,7 +571,11 @@ body.dark .log-reason { color: #8aacbf !important; }
       </div>
       <!-- SEARCH -->
       <div class="sidebar-search">
-        <input type="text" id="sideSearch" placeholder="Search…" oninput="renderNav()">
+        <div style="position:relative">
+          <input type="text" id="sideSearch" placeholder="Search all content…" oninput="renderNav();updateSearchCount()" style="padding-right:22px">
+          <button id="searchClearBtn" onclick="clearSearch()" style="display:none;position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.4);font-size:0.9rem;padding:0;line-height:1">✕</button>
+        </div>
+        <div id="searchCount" style="font-size:0.7rem;color:rgba(255,255,255,0.3);padding:3px 2px 0;min-height:14px"></div>
       </div>
     </div>
     <nav class="sidebar-nav" id="sideNav"></nav>
@@ -908,7 +932,6 @@ async function loadFromGitHub() {
     const data = JSON.parse(atob(json.content.replace(/\n/g,'')));
     state.l1s       = data.l1s       || state.l1s;
     state.logs      = data.logs      || state.logs;
-    state.favorites = data.favorites || state.favorites;
     runMigrations();
     cacheLocally();
     setSyncStatus('idle');
@@ -923,7 +946,7 @@ async function loadFromGitHub() {
 
 async function saveToGitHub() {
   setSyncStatus('saving');
-  const payload = { l1s: state.l1s, logs: state.logs, favorites: state.favorites };
+  const payload = { l1s: state.l1s, logs: state.logs };
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
   const body = {
     message: `Update toolbox data — ${nowEST()}`,
@@ -966,7 +989,7 @@ async function refreshSha() {
 }
 
 function cacheLocally() {
-  try { localStorage.setItem('toolbox_v2', JSON.stringify({ l1s: state.l1s, logs: state.logs, favorites: state.favorites })); } catch(e) {}
+  try { localStorage.setItem('toolbox_v2', JSON.stringify({ l1s: state.l1s, logs: state.logs })); } catch(e) {}
 }
 
 function loadFromLocalCache() {
@@ -976,7 +999,6 @@ function loadFromLocalCache() {
       const p = JSON.parse(saved);
       state.l1s       = p.l1s       || state.l1s;
       state.logs      = p.logs      || state.logs;
-      state.favorites = p.favorites || state.favorites;
       runMigrations();
     } catch(e) { buildDefaultState(); }
   } else {
@@ -1199,6 +1221,16 @@ function toggleFavSection() {
   document.getElementById('favList').style.display = favOpen ? '' : 'none';
   document.getElementById('favToggleIcon').classList.toggle('open', favOpen);
 }
+// Favorites are stored per-user in localStorage (not shared via GitHub)
+function loadFavorites() {
+  try {
+    const saved = localStorage.getItem('toolbox_favorites');
+    if (saved) state.favorites = JSON.parse(saved) || [];
+  } catch(e) { state.favorites = []; }
+}
+function saveFavorites() {
+  try { localStorage.setItem('toolbox_favorites', JSON.stringify(state.favorites)); } catch(e) {}
+}
 function isFav(itemId) { return state.favorites.some(f => f.itemId === itemId); }
 function toggleFavorite(l1Id, l2Id, secId, itemId) {
   const idx = state.favorites.findIndex(f => f.itemId === itemId);
@@ -1209,17 +1241,17 @@ function toggleFavorite(l1Id, l2Id, secId, itemId) {
     state.favorites.push({ l1Id, l2Id, secId, itemId, title: item?.title || '' });
     showToast('Added to Favorites ⭐', 'success');
   }
-  saveState(); renderFavorites();
+  saveFavorites(); renderFavorites();
   if (currentView === 'item') showToolDetail(l1Id, l2Id, secId, itemId);
 }
 function moveFav(idx, dir) {
   const ni = idx + dir;
   if (ni < 0 || ni >= state.favorites.length) return;
   [state.favorites[idx], state.favorites[ni]] = [state.favorites[ni], state.favorites[idx]];
-  saveState(); renderFavorites();
+  saveFavorites(); renderFavorites();
 }
 function removeFav(idx) {
-  state.favorites.splice(idx, 1); saveState(); renderFavorites();
+  state.favorites.splice(idx, 1); saveFavorites(); renderFavorites();
   showToast('Removed from Favorites', 'warning');
 }
 function renderFavorites() {
@@ -1344,7 +1376,13 @@ function renderL2(l1, l2, q) {
 function renderL3(l1, l2, sec, q) {
   const isOpen = openL3.has(sec.id) || !!q;
   const visibleItems = sec.items
-    .filter(item => (state.isAdmin || !item.inProgress) && (!q || item.title.toLowerCase().includes(q) || sec.name.toLowerCase().includes(q) || l2.name.toLowerCase().includes(q)))
+    .filter(item => {
+      if (!state.isAdmin && item.inProgress) return false;
+      if (!q) return true;
+      // If parent (section or subcategory) name matches, show all visible items
+      if (sec.name.toLowerCase().includes(q) || l2.name.toLowerCase().includes(q)) return true;
+      return itemMatchesSearch(item, q);
+    })
     .sort((a,b) => a.title.localeCompare(b.title));
 
   if (q && !visibleItems.length && !sec.name.toLowerCase().includes(q)) return '';
@@ -1385,12 +1423,38 @@ function renderL4(l1, l2, sec, item) {
   `;
 }
 
+// Deep search: checks all content fields visible to the current user
+function stripHtml(html) {
+  if (!html) return '';
+  // Create a temp element to decode HTML entities and strip tags
+  const tmp = document.createElement('div');
+  tmp.innerHTML = html;
+  return (tmp.textContent || tmp.innerText || '').toLowerCase();
+}
+
+function itemMatchesSearch(item, q) {
+  if (!q) return true;
+  // Respect in-progress visibility
+  if (!state.isAdmin && item.inProgress) return false;
+  const lq = q.toLowerCase();
+  const fields = [
+    (item.title || '').toLowerCase(),
+    stripHtml(item.desc),
+    stripHtml(item.config),
+    stripHtml(item.perms),
+    (item.demoLink || '').toLowerCase(),
+    (item.link || '').toLowerCase(),
+    ...(item.kbArticles || []).map(kb => (kb.name || '').toLowerCase()),
+  ];
+  return fields.some(f => f.includes(lq));
+}
+
 function subMatchesSearch(l2, q) {
   if (l2.name.toLowerCase().includes(q)) return true;
   for (const sec of l2.sections || []) {
     if (sec.name.toLowerCase().includes(q)) return true;
     for (const item of sec.items || []) {
-      if (item.title.toLowerCase().includes(q)) return true;
+      if (itemMatchesSearch(item, q)) return true;
     }
   }
   return false;
@@ -1399,6 +1463,41 @@ function subMatchesSearch(l2, q) {
 function toggleL1(id) { openL1.has(id) ? openL1.delete(id) : openL1.add(id); renderNav(); }
 function toggleL2(id) { openL2.has(id) ? openL2.delete(id) : openL2.add(id); renderNav(); }
 function toggleL3(id) { openL3.has(id) ? openL3.delete(id) : openL3.add(id); renderNav(); }
+
+function clearSearch() {
+  document.getElementById('sideSearch').value = '';
+  updateSearchCount();
+  renderNav();
+}
+
+function updateSearchCount() {
+  const q = document.getElementById('sideSearch').value.toLowerCase().trim();
+  const countEl = document.getElementById('searchCount');
+  const clearBtn = document.getElementById('searchClearBtn');
+  if (!q) {
+    countEl.textContent = '';
+    if (clearBtn) clearBtn.style.display = 'none';
+    return;
+  }
+  if (clearBtn) clearBtn.style.display = '';
+  // Count matching items
+  let count = 0;
+  state.l1s.forEach(l1 => {
+    (l1.subcategories||[]).forEach(l2 => {
+      (l2.sections||[]).forEach(sec => {
+        sec.items.forEach(item => {
+          if (itemMatchesSearch(item, q)) count++;
+        });
+        // Count section itself if name matches and has items
+        if (sec.name.toLowerCase().includes(q)) {
+          const secVisible = sec.items.filter(i => state.isAdmin || !i.inProgress).length;
+          if (secVisible > 0) count += 0; // already counted above
+        }
+      });
+    });
+  });
+  countEl.textContent = count === 0 ? 'No results' : `${count} item${count !== 1 ? 's' : ''} found`;
+}
 
 function renderAdminLogsNav() {
   const nav = document.getElementById('adminLogsNav');
@@ -1470,7 +1569,13 @@ function showToolDetail(l1Id, l2Id, secId, itemId) {
       <div class="detail-section">
         <div class="detail-label">Related KB Articles</div>
         ${item.kbArticles?.length
-          ? `<div class="kb-articles-list">${item.kbArticles.map(kb => `<div class="kb-article-item">📄 ${kb.link?`<a href="${escHtml(kb.link)}" target="_blank">${escHtml(kb.name)}</a>`:escHtml(kb.name)}</div>`).join('')}</div>`
+          ? `<div class="kb-articles-list">${item.kbArticles.map(kb => {
+              const isInternal = (kb.type || 'internal') === 'internal';
+              const badge = isInternal
+                ? '<span class="kb-type-badge kb-type-internal">🔒 Internal</span>'
+                : '<span class="kb-type-badge kb-type-client">🌐 Client Facing</span>';
+              return `<div class="kb-article-item">${badge} ${kb.link?`<a href="${escHtml(kb.link)}" target="_blank">${escHtml(kb.name)}</a>`:escHtml(kb.name)}</div>`;
+            }).join('')}</div>`
           : '<p class="detail-empty">No KB articles linked.</p>'}
       </div>` : ''}
     </div>
@@ -1843,22 +1948,49 @@ function confirmDeleteSubsection(l1Id, l2Id, secId, itemId) {
 // ─── KB ROWS ─────────────────────────────────────────────────────
 function renderKBRows(kbs) {
   const wrap = document.getElementById('kbEntriesWrap');
-  wrap.innerHTML = kbs.map((kb,i)=>`<div class="kb-entry-row" id="kbrow_${i}"><input type="text" placeholder="KB Article Name" value="${escHtml(kb.name||'')}" id="kb_name_${i}"><input type="url" placeholder="https://…" value="${escHtml(kb.link||'')}" id="kb_link_${i}"><button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button></div>`).join('');
+  wrap.innerHTML = kbs.map((kb,i) => {
+    const isInternal = (kb.type || 'internal') === 'internal';
+    return `<div class="kb-entry-row" id="kbrow_${i}">
+      <input type="text" placeholder="KB Article Name" value="${escHtml(kb.name||'')}" id="kb_name_${i}">
+      <input type="url" placeholder="https://…" value="${escHtml(kb.link||'')}" id="kb_link_${i}">
+      <div class="kb-type-toggle">
+        <button type="button" id="kb_type_${i}_internal" class="${isInternal?'active-internal':''}" onclick="setKBType(${i},'internal',event)">🔒 Internal</button>
+        <button type="button" id="kb_type_${i}_client" class="${!isInternal?'active-client':''}" onclick="setKBType(${i},'client',event)">🌐 Client</button>
+      </div>
+      <button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button>
+    </div>`;
+  }).join('');
   wrap._count = kbs.length;
 }
 function addKBRow() {
   const wrap = document.getElementById('kbEntriesWrap');
   const i = wrap._count||0; wrap._count = i+1;
   const row = document.createElement('div'); row.className='kb-entry-row'; row.id=`kbrow_${i}`;
-  row.innerHTML=`<input type="text" placeholder="KB Article Name" id="kb_name_${i}"><input type="url" placeholder="https://…" id="kb_link_${i}"><button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button>`;
+  row.innerHTML = `<input type="text" placeholder="KB Article Name" id="kb_name_${i}"><input type="url" placeholder="https://…" id="kb_link_${i}"><div class="kb-type-toggle"><button type="button" id="kb_type_${i}_internal" class="active-internal" onclick="setKBType(${i},'internal',event)">🔒 Internal</button><button type="button" id="kb_type_${i}_client" class="" onclick="setKBType(${i},'client',event)">🌐 Client</button></div><button class="kb-remove-btn" onclick="removeKBRow(${i})">×</button>`;
   wrap.appendChild(row);
 }
 function removeKBRow(i) { document.getElementById('kbrow_'+i)?.remove(); }
 function getKBRows() {
   const rows = document.getElementById('kbEntriesWrap').querySelectorAll('.kb-entry-row');
   const result=[];
-  rows.forEach(row=>{ const id=row.id.replace('kbrow_',''); const name=document.getElementById('kb_name_'+id)?.value.trim()||''; const link=document.getElementById('kb_link_'+id)?.value.trim()||''; if(name) result.push({name,link}); });
+  rows.forEach(row=>{
+    const id=row.id.replace('kbrow_','');
+    const name=document.getElementById('kb_name_'+id)?.value.trim()||'';
+    const link=document.getElementById('kb_link_'+id)?.value.trim()||'';
+    const clientBtn=document.getElementById('kb_type_'+id+'_client');
+    const type = clientBtn?.classList.contains('active-client') ? 'client' : 'internal';
+    if(name) result.push({name,link,type});
+  });
   return result;
+}
+
+function setKBType(i, type, event) {
+  if (event) { event.preventDefault(); event.stopPropagation(); }
+  const intBtn = document.getElementById('kb_type_'+i+'_internal');
+  const cliBtn = document.getElementById('kb_type_'+i+'_client');
+  if (!intBtn || !cliBtn) return;
+  intBtn.className = type === 'internal' ? 'active-internal' : '';
+  cliBtn.className = type === 'client' ? 'active-client' : '';
 }
 
 // ─── RICH EDITOR / IMAGES ────────────────────────────────────────
@@ -1925,6 +2057,7 @@ renderFavorites();
 if (state.favorites.length) { favOpen=true; document.getElementById('favList').style.display=''; document.getElementById('favToggleIcon').classList.add('open'); }
 setTimeout(() => document.getElementById('loginEmail').focus(), 100);
 
+loadFavorites();
 // Load live data from GitHub (async — UI is already interactive from defaults/cache)
 loadFromGitHub().then(() => {
   renderNav();
