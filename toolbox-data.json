@@ -16,17 +16,19 @@
                   "id": "_56nbtha2r",
                   "title": "View a Workspace",
                   "link": "https://www.greenshadesonline.com/internal/Workspaces.aspx",
-                  "desc": "<div>This tools allows you to access and/or search for a workspace.</div><div><br></div><div>A workspace can be accessed by entering the&nbsp;<span style=\"font-size: 14.08px;\">Workspace ID (WSID)</span><span style=\"font-size: 0.88rem;\">, along with the reason for accessing the workspace and selecting continue. If the user has permission, the user will be redirected to the client&#39;s workspace as a super administrator.</span></div><div><span style=\"font-size: 0.88rem;\"><br></span></div><div>A workspace can all be accessed by searching based off a number of options and selecting the Access button. When selecting access, the user will be redirected to a page requesting the reason for&nbsp;<span style=\"font-size: 14.08px;\">accessing the workspace before selecting continue.&nbsp;</span><span style=\"font-size: 14.08px;\">If the user has permission, the user will be then redirected to the client&#39;s workspace as a super administrator.</span></div><div><span style=\"font-size: 14.08px;\"><br></span></div><div><span style=\"font-size: 14.08px;\">Outside of accessing a workspace, this page can also provide useful information and allow users to View Details for a workspace entered in the search bar. These details include active modules, check count per check date, as well as a list of admins.</span></div>",
+                  "desc": "<!--StartFragment--><p data-start=\"87\" data-end=\"147\">This tool enables users to search for and access workspaces.</p><p data-start=\"87\" data-end=\"147\"><br></p>\n<p data-start=\"149\" data-end=\"404\">A workspace can be accessed by entering the Workspace ID (WSID), providing a reason for access, and selecting <span data-start=\"259\" data-end=\"271\">Continue</span>. If the user has the appropriate permissions, they will be redirected to the client’s workspace with super administrator privileges.</p><p data-start=\"149\" data-end=\"404\"><br></p>\n<p data-start=\"406\" data-end=\"751\">Alternatively, users may locate a workspace by searching using various criteria and selecting the <span data-start=\"504\" data-end=\"514\" style=\"\">Access</span> option. Upon selecting <span data-start=\"538\" data-end=\"548\">Access</span>, the user will be prompted to provide a reason before proceeding. Once submitted, and if permissions are validated, the user will be redirected to the client’s workspace with super administrator access.</p><p data-start=\"406\" data-end=\"751\"><br></p>\n<p data-start=\"753\" data-end=\"1056\">In addition to facilitating workspace access, this page also provides valuable insights. Users can select <span data-start=\"859\" data-end=\"875\">View Details</span> for a workspace from the search results to review key information, including active modules, check counts by check date, and a list of administrators associated with the workspace.</p><!--EndFragment-->",
                   "demoLink": "",
                   "config": "",
                   "inProgress": false,
                   "hiddenFields": [
                     "demo",
                     "config",
-                    "kb"
+                    "kb",
+                    "perms"
                   ],
                   "kbArticles": [],
-                  "lastUpdated": "04/27/2026, 06:49:32 PM"
+                  "lastUpdated": "04/29/2026, 09:57:46 AM",
+                  "perms": ""
                 },
                 {
                   "id": "_8kahzhm0r",
@@ -610,6 +612,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_06flj5214",
+      "datetime": "04/29/2026, 09:57:46 AM",
+      "user": "Cbabcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "View a Workspace (General › Internal › Internal Tools)",
+      "reason": "Updating description"
+    },
     {
       "id": "_pz9k0ux7d",
       "datetime": "04/29/2026, 09:55:59 AM",
