@@ -642,6 +642,32 @@
               "items": []
             }
           ]
+        },
+        {
+          "id": "_oc9fb6kcf",
+          "name": "UFF",
+          "sections": [
+            {
+              "id": "_be5y9gd31",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_hvowfgoz9",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_thften6r1",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_6ixe66m0w",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
         }
       ]
     }
