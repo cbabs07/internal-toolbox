@@ -263,8 +263,14 @@
                   "config": "",
                   "inProgress": true,
                   "hiddenFields": [],
-                  "kbArticles": [],
-                  "lastUpdated": "04/30/2026, 10:00:09 AM"
+                  "kbArticles": [
+                    {
+                      "name": "Payroll: Issues with Minimum wage adjustment",
+                      "link": "https://greenshades.crm.dynamics.com/main.aspx?pagetype=kbarticle&navbar=off&forceUCI=1&articleId=21602e12-70a7-eb11-b1ac-000d3a3b2bd4&appid=1ec07c58-e95e-ea11-a811-000d3a37503c",
+                      "type": "internal"
+                    }
+                  ],
+                  "lastUpdated": "04/30/2026, 10:54:54 AM"
                 }
               ]
             },
@@ -687,6 +693,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_dzs85w5ym",
+      "datetime": "04/30/2026, 10:54:54 AM",
+      "user": "Rcrooms (rcrooms@greenshades.com)",
+      "type": "Item",
+      "action": "edited",
+      "title": "Minimum wage adjustment (Products › Payroll › Configurable Settings)",
+      "reason": "Updating section as I have a few free minutes"
+    },
     {
       "id": "_inzbuc5pi",
       "datetime": "04/30/2026, 10:00:09 AM",
