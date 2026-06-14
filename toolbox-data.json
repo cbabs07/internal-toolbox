@@ -1007,6 +1007,13 @@
   ],
   "loginLogs": [
     {
+      "id": "_fl27cc6do",
+      "datetime": "06/14/2026, 03:03:19 AM",
+      "user": "Test User3 (testuser3@greenshades.com)",
+      "email": "testuser3@greenshades.com",
+      "type": "New User"
+    },
+    {
       "id": "_f5awop12s",
       "datetime": "06/14/2026, 02:42:06 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
@@ -1233,6 +1240,17 @@
   ],
   "roleLogs": [
     {
+      "id": "_ilt5c46gi",
+      "datetime": "06/14/2026, 03:03:19 AM",
+      "name": "Test User3",
+      "email": "testuser3@greenshades.com",
+      "department": "Sales",
+      "permissions": "general",
+      "updatedBy": "System",
+      "reason": "New User",
+      "type": "Added"
+    },
+    {
       "id": "_z790lucie",
       "datetime": "06/14/2026, 02:31:12 AM",
       "name": "Test User2",
@@ -1267,7 +1285,7 @@
       "id": "_bcbay2iia",
       "name": "Sales",
       "classMapping": "Unrestricted",
-      "userCount": 0
+      "userCount": 1
     },
     {
       "id": "_qsutkgo5j",
@@ -1311,15 +1329,15 @@
     {
       "id": "_r8brabj4r",
       "email": "testuser3@greenshades.com",
-      "nameFirst": "",
-      "nameLast": "",
-      "dept": "",
+      "nameFirst": "Test",
+      "nameLast": "User3",
+      "dept": "Sales",
       "pwHash": "020ecc85ac7a31e958560922b6df39c90a047e97137888d50a41f48000829326",
       "permissions": [
         "general"
       ],
-      "firstLogin": true,
-      "mustChangePw": true,
+      "firstLogin": false,
+      "mustChangePw": false,
       "createdAt": "06/14/2026, 03:02:51 AM"
     }
   ],
