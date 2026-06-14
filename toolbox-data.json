@@ -859,7 +859,15 @@
       "reason": ""
     }
   ],
-  "loginLogs": [],
+  "loginLogs": [
+    {
+      "id": "_ie631fu01",
+      "datetime": "06/14/2026, 01:35:35 AM",
+      "user": "Cbabcock  (cbabcock@greenshades.com)",
+      "email": "cbabcock@greenshades.com",
+      "type": "Logged In"
+    }
+  ],
   "viewLogs": [],
   "automationLogs": [],
   "deptLogs": [],
