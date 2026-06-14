@@ -54,6 +54,149 @@
       ]
     },
     {
+      "id": "_dudtcfeg1",
+      "name": "Departments",
+      "subcategories": [
+        {
+          "id": "_i7zf6t1j4",
+          "name": "Company",
+          "sections": [
+            {
+              "id": "_mopm5a2s9",
+              "name": "Internal Tools",
+              "items": [
+                {
+                  "id": "_6mmiu6zv2",
+                  "title": "ExamBuilder",
+                  "link": "https://testing.exambuilder.com/login",
+                  "desc": "Log in to ExamBuilder to access Demo-Palooza content.",
+                  "demoLink": "",
+                  "config": "",
+                  "inProgress": false,
+                  "hiddenFields": [
+                    "config",
+                    "demo",
+                    "kb"
+                  ],
+                  "kbArticles": [],
+                  "lastUpdated": "04/27/2026, 09:07:16 PM"
+                }
+              ]
+            },
+            {
+              "id": "_zpgi1r5og",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_4xiyhah2y",
+          "name": "Development",
+          "sections": [
+            {
+              "id": "_2hp6ydquk",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_0j8eh2lm3",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_hbyv60q4v",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_o59pts90l",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_tji1z3jdn",
+          "name": "Sales",
+          "sections": [
+            {
+              "id": "_7tccepdhi",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_l42zzkque",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_c5fg72x9s",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_aa6znl6sl",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_fy9apj6lb",
+          "name": "Support",
+          "sections": [
+            {
+              "id": "_n30f80mz4",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_r1psuk8eu",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_swrz3foug",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_xbm939xtk",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_lc0n4489m",
+          "name": "TPE",
+          "sections": [
+            {
+              "id": "_c99wjw6cx",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_lcrnaskng",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_b2f96ssm8",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_5011uf12e",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "_spoi3po35",
       "name": "Products",
       "subcategories": [
@@ -471,149 +614,6 @@
             },
             {
               "id": "_bs4dw88ql",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "_dudtcfeg1",
-      "name": "Departments",
-      "subcategories": [
-        {
-          "id": "_i7zf6t1j4",
-          "name": "Company",
-          "sections": [
-            {
-              "id": "_mopm5a2s9",
-              "name": "Internal Tools",
-              "items": [
-                {
-                  "id": "_6mmiu6zv2",
-                  "title": "ExamBuilder",
-                  "link": "https://testing.exambuilder.com/login",
-                  "desc": "Log in to ExamBuilder to access Demo-Palooza content.",
-                  "demoLink": "",
-                  "config": "",
-                  "inProgress": false,
-                  "hiddenFields": [
-                    "config",
-                    "demo",
-                    "kb"
-                  ],
-                  "kbArticles": [],
-                  "lastUpdated": "04/27/2026, 09:07:16 PM"
-                }
-              ]
-            },
-            {
-              "id": "_zpgi1r5og",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_4xiyhah2y",
-          "name": "Development",
-          "sections": [
-            {
-              "id": "_2hp6ydquk",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_0j8eh2lm3",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_hbyv60q4v",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_o59pts90l",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_tji1z3jdn",
-          "name": "Sales",
-          "sections": [
-            {
-              "id": "_7tccepdhi",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_l42zzkque",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_c5fg72x9s",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_aa6znl6sl",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_fy9apj6lb",
-          "name": "Support",
-          "sections": [
-            {
-              "id": "_n30f80mz4",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_r1psuk8eu",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_swrz3foug",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_xbm939xtk",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_lc0n4489m",
-          "name": "TPE",
-          "sections": [
-            {
-              "id": "_c99wjw6cx",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_lcrnaskng",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_b2f96ssm8",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_5011uf12e",
               "name": "Defined Processes",
               "items": []
             }
