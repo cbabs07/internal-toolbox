@@ -620,9 +620,23 @@
           ]
         }
       ]
+    },
+    {
+      "id": "_zj0cgm051",
+      "name": "AI",
+      "subcategories": []
     }
   ],
   "logs": [
+    {
+      "id": "_iu24kcb8h",
+      "datetime": "06/14/2026, 03:00:36 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Main Category",
+      "action": "added",
+      "title": "AI",
+      "reason": ""
+    },
     {
       "id": "_p5xxx7xks",
       "datetime": "06/14/2026, 01:40:12 AM",
@@ -935,6 +949,20 @@
     }
   ],
   "viewLogs": [
+    {
+      "id": "_ciu5rtvj8",
+      "datetime": "06/14/2026, 02:59:31 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Impersonate an Admin",
+      "path": "General › Internal › Internal Tools"
+    },
+    {
+      "id": "_vjm8sb01c",
+      "datetime": "06/14/2026, 02:49:40 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Impersonate an Admin",
+      "path": "General › Internal › Internal Tools"
+    },
     {
       "id": "_5oqews215",
       "datetime": "06/14/2026, 02:32:29 AM",
