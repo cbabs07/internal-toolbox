@@ -339,11 +339,11 @@
                   "link": "",
                   "desc": "This configuration allows users to define a start date from which the sync process will retrieve data.<div><br></div><div>This setting is particularly useful in scenarios where historical data contains inconsistencies or errors that the client does not wish to correct. By specifying a start date, the sync can be limited to only include data from that point forward, avoiding issues tied to legacy data.</div><div><br></div><div>Example Use Case:</div><div>A client uses a single child support garnishment code for multiple child support records per employee. This is not supported, as each record requires a unique identifier. To resolve this, the client may update future payroll configurations by assigning distinct codes (e.g., Child Support 1 (CS1), Child Support 2 (CS2), etc.). By setting the sync start date to align with this change, only compliant data will be processed, preventing partial failures caused by duplicate records.</div><div><br></div><div>Please note that once a start date is configured, the sync process will only retrieve data from that date forward. Even if checksum tables are truncated to force a full sync, data prior to the specified start date will not be included.</div>",
                   "demoLink": "",
-                  "config": "To request this setting, please send up a case with the below information:\r<div>\r</div><div><b>WSID:</b> The workspace ID(s) this setting needs to be configured for\r</div><div><b>Sync Start Date:</b> The stating date the sync will look back from.\r</div><div><b>Reason:</b> Detailed explanation as to why we are enabling this setting to ensure it fits the customer's needs.</div>",
+                  "config": "To request this setting, please send up a case with the below information:<div>&nbsp;\n<div>\n</div><div><b>WSID:</b> The workspace ID(s) this setting needs to be configured for\n</div><div><b>Sync Start Date:</b> The stating date the sync will look back from.\n</div><div><b>Reason:</b> Detailed explanation as to why we are enabling this setting to ensure it fits the customer's needs.</div></div>",
                   "inProgress": false,
                   "hiddenFields": [
                     "demo",
-                    "perms"
+                    "slack"
                   ],
                   "kbArticles": [
                     {
@@ -352,8 +352,16 @@
                       "type": "internal"
                     }
                   ],
-                  "lastUpdated": "04/29/2026, 10:33:56 AM",
-                  "perms": ""
+                  "lastUpdated": "06/14/2026, 01:40:12 AM",
+                  "perms": "Requires write permissions for database:&nbsp;<!--StartFragment--> SyncGlobal <!--EndFragment-->",
+                  "owner": "Sustainability - Platform Dev",
+                  "slackEntries": [],
+                  "resources": "Can also be configured by TPE",
+                  "deptTags": [],
+                  "candidateToAutomate": false,
+                  "manualEffort": "",
+                  "automateComments": "",
+                  "createdBy": "Cbabcock  (cbabcock@greenshades.com)"
                 }
               ]
             },
@@ -616,6 +624,15 @@
   ],
   "logs": [
     {
+      "id": "_p5xxx7xks",
+      "datetime": "06/14/2026, 01:40:12 AM",
+      "user": "Cbabcock  (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "Updated",
+      "title": "Sync Start Date (Products › Sync Portal › Configurable Settings)",
+      "reason": "Updating perms, owned by, etc"
+    },
+    {
       "id": "_x3zpsisoy",
       "datetime": "05/01/2026, 04:03:45 PM",
       "user": "Cbabcock (cbabcock@greenshades.com)",
@@ -869,6 +886,13 @@
     }
   ],
   "viewLogs": [
+    {
+      "id": "_ffe6olt2m",
+      "datetime": "06/14/2026, 01:40:12 AM",
+      "user": "Cbabcock  (cbabcock@greenshades.com)",
+      "item": "Sync Start Date",
+      "path": "Products › Sync Portal › Configurable Settings"
+    },
     {
       "id": "_jc1xylk37",
       "datetime": "06/14/2026, 01:37:04 AM",
