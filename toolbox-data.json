@@ -870,12 +870,22 @@
   ],
   "viewLogs": [],
   "automationLogs": [],
-  "deptLogs": [],
+  "deptLogs": [
+    {
+      "id": "_e5tridan2",
+      "datetime": "06/14/2026, 01:36:40 AM",
+      "department": "Support",
+      "classMapping": "Restricted",
+      "type": "Edited",
+      "reason": "Updating Restriction",
+      "modifiedBy": "Cbabcock  (cbabcock@greenshades.com)"
+    }
+  ],
   "departments": [
     {
       "id": "_k3bf2xbpr",
       "name": "Support",
-      "classMapping": "Unrestricted",
+      "classMapping": "Restricted",
       "userCount": 0
     },
     {
