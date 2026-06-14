@@ -551,15 +551,15 @@
                       "type": "internal"
                     }
                   ],
-                  "lastUpdated": "06/14/2026, 03:24:31 AM",
+                  "lastUpdated": "06/14/2026, 03:29:08 AM",
                   "perms": "This tool requires specific permissions to use - TPE/QA, Dev, <i>TBD</i>",
                   "owner": "",
                   "slackEntries": [],
                   "resources": "",
                   "deptTags": [],
-                  "candidateToAutomate": false,
-                  "manualEffort": "",
-                  "automateComments": "",
+                  "candidateToAutomate": true,
+                  "manualEffort": "60 min",
+                  "automateComments": "This would be a win to automate",
                   "createdBy": "Courtney Babcock (cbabcock@greenshades.com)"
                 }
               ]
@@ -715,6 +715,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_dsft2wlhp",
+      "datetime": "06/14/2026, 03:29:08 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Item",
+      "action": "Updated",
+      "title": "Payroll Migration Tool (Products > Sync Portal > Internal Tools)",
+      "reason": "Flagging for review"
+    },
     {
       "id": "_dqdtnxqcv",
       "datetime": "06/14/2026, 03:24:31 AM",
@@ -1117,6 +1126,20 @@
   ],
   "viewLogs": [
     {
+      "id": "_pxtmcr1c2",
+      "datetime": "06/14/2026, 03:29:08 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Payroll Migration Tool",
+      "path": "Products › Sync Portal › Internal Tools"
+    },
+    {
+      "id": "_yw1su99np",
+      "datetime": "06/14/2026, 03:28:23 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Payroll Migration Tool",
+      "path": "Products › Sync Portal › Internal Tools"
+    },
+    {
       "id": "_f41s7ar08",
       "datetime": "06/14/2026, 03:24:31 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
@@ -1285,7 +1308,17 @@
       "path": "Products ÃÂ¢ÃÂÃÂº Sync Portal ÃÂ¢ÃÂÃÂº Configurable Settings"
     }
   ],
-  "automationLogs": [],
+  "automationLogs": [
+    {
+      "id": "_y0lsqw1js",
+      "datetime": "06/14/2026, 03:29:08 AM",
+      "flaggedBy": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Payroll Migration Tool",
+      "manualEffort": "60 min",
+      "comments": "This would be a win to automate",
+      "status": "Identified"
+    }
+  ],
   "deptLogs": [
     {
       "id": "_e5tridan2",
