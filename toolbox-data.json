@@ -624,10 +624,46 @@
     {
       "id": "_zj0cgm051",
       "name": "AI",
-      "subcategories": []
+      "subcategories": [
+        {
+          "id": "_2ke9r5tnc",
+          "name": "Skills",
+          "sections": [
+            {
+              "id": "_a7s6ts0kd",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_89jpqbb9n",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_8l81uzze8",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_ljwoy2nkg",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
     }
   ],
   "logs": [
+    {
+      "id": "_cps25blje",
+      "datetime": "06/14/2026, 03:00:54 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Subcategory",
+      "action": "added",
+      "title": "Skills (in AI)",
+      "reason": ""
+    },
     {
       "id": "_iu24kcb8h",
       "datetime": "06/14/2026, 03:00:36 AM",
