@@ -626,6 +626,32 @@
       "name": "AI",
       "subcategories": [
         {
+          "id": "_9mi1kxsk2",
+          "name": "Agents",
+          "sections": [
+            {
+              "id": "_2grs8oho3",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_b0pue5nc8",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_e0nbm116d",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_kyoxnlgkn",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
           "id": "_2ke9r5tnc",
           "name": "Skills",
           "sections": [
@@ -655,6 +681,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_9z80xdwog",
+      "datetime": "06/14/2026, 03:00:58 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Subcategory",
+      "action": "added",
+      "title": "Agents (in AI)",
+      "reason": ""
+    },
     {
       "id": "_cps25blje",
       "datetime": "06/14/2026, 03:00:54 AM",
