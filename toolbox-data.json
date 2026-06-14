@@ -2,7 +2,7 @@
   "l1s": [
     {
       "id": "_zj0cgm051",
-      "name": "AI",
+      "name": "AI Innovation",
       "subcategories": [
         {
           "id": "_9mi1kxsk2",
@@ -707,6 +707,15 @@
     }
   ],
   "logs": [
+    {
+      "id": "_812xftmka",
+      "datetime": "06/14/2026, 03:01:53 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Main Category",
+      "action": "edited",
+      "title": "AI → AI Innovation",
+      "reason": "Updating title"
+    },
     {
       "id": "_42g967qhl",
       "datetime": "06/14/2026, 03:01:04 AM",
