@@ -868,7 +868,15 @@
       "type": "Logged In"
     }
   ],
-  "viewLogs": [],
+  "viewLogs": [
+    {
+      "id": "_jc1xylk37",
+      "datetime": "06/14/2026, 01:37:04 AM",
+      "user": "Cbabcock  (cbabcock@greenshades.com)",
+      "item": "Sync Start Date",
+      "path": "Products › Sync Portal › Configurable Settings"
+    }
+  ],
   "automationLogs": [],
   "deptLogs": [
     {
