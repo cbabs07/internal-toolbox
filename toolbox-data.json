@@ -54,6 +54,90 @@
       ]
     },
     {
+      "id": "_zj0cgm051",
+      "name": "AI",
+      "subcategories": [
+        {
+          "id": "_9mi1kxsk2",
+          "name": "Agents",
+          "sections": [
+            {
+              "id": "_2grs8oho3",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_b0pue5nc8",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_e0nbm116d",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_kyoxnlgkn",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_2ke9r5tnc",
+          "name": "Skills",
+          "sections": [
+            {
+              "id": "_a7s6ts0kd",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_89jpqbb9n",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_8l81uzze8",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_ljwoy2nkg",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        },
+        {
+          "id": "_dojtx1uca",
+          "name": "Tools",
+          "sections": [
+            {
+              "id": "_7v746mudd",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_fox4a042a",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_nyh36t126",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_a3pxo52t1",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "_dudtcfeg1",
       "name": "Departments",
       "subcategories": [
@@ -189,90 +273,6 @@
             },
             {
               "id": "_5011uf12e",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "_zj0cgm051",
-      "name": "AI",
-      "subcategories": [
-        {
-          "id": "_9mi1kxsk2",
-          "name": "Agents",
-          "sections": [
-            {
-              "id": "_2grs8oho3",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_b0pue5nc8",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_e0nbm116d",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_kyoxnlgkn",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_2ke9r5tnc",
-          "name": "Skills",
-          "sections": [
-            {
-              "id": "_a7s6ts0kd",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_89jpqbb9n",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_8l81uzze8",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_ljwoy2nkg",
-              "name": "Defined Processes",
-              "items": []
-            }
-          ]
-        },
-        {
-          "id": "_dojtx1uca",
-          "name": "Tools",
-          "sections": [
-            {
-              "id": "_7v746mudd",
-              "name": "Documentation",
-              "items": []
-            },
-            {
-              "id": "_fox4a042a",
-              "name": "Internal Tools",
-              "items": []
-            },
-            {
-              "id": "_nyh36t126",
-              "name": "Configurable Settings",
-              "items": []
-            },
-            {
-              "id": "_a3pxo52t1",
               "name": "Defined Processes",
               "items": []
             }
