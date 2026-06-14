@@ -1318,6 +1318,20 @@
       "firstLogin": false,
       "createdAt": "06/14/2026, 01:35:25 AM",
       "mustChangePw": false
+    },
+    {
+      "id": "_7thcbzlks",
+      "email": "testuser2@greenshades.com",
+      "nameFirst": "",
+      "nameLast": "",
+      "dept": "",
+      "pwHash": "020ecc85ac7a31e958560922b6df39c90a047e97137888d50a41f48000829326",
+      "permissions": [
+        "general"
+      ],
+      "firstLogin": true,
+      "mustChangePw": true,
+      "createdAt": "06/14/2026, 03:10:23 AM"
     }
   ],
   "passwords": {
