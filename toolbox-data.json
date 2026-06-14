@@ -676,11 +676,46 @@
               "items": []
             }
           ]
+        },
+        {
+          "id": "_dojtx1uca",
+          "name": "Tools",
+          "sections": [
+            {
+              "id": "_7v746mudd",
+              "name": "Documentation",
+              "items": []
+            },
+            {
+              "id": "_fox4a042a",
+              "name": "Internal Tools",
+              "items": []
+            },
+            {
+              "id": "_nyh36t126",
+              "name": "Configurable Settings",
+              "items": []
+            },
+            {
+              "id": "_a3pxo52t1",
+              "name": "Defined Processes",
+              "items": []
+            }
+          ]
         }
       ]
     }
   ],
   "logs": [
+    {
+      "id": "_42g967qhl",
+      "datetime": "06/14/2026, 03:01:04 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "type": "Subcategory",
+      "action": "added",
+      "title": "Tools (in AI)",
+      "reason": ""
+    },
     {
       "id": "_9z80xdwog",
       "datetime": "06/14/2026, 03:00:58 AM",
