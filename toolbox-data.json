@@ -739,7 +739,7 @@
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "type": "Main Category",
       "action": "Updated",
-      "title": "AI ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ AI Innovation",
+      "title": "AI ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ AI Innovation",
       "reason": "Updating title"
     },
     {
@@ -943,18 +943,11 @@
   ],
   "loginLogs": [
     {
-      "id": "_82xrm99gb",
-      "datetime": "06/14/2026, 03:58:29 AM",
+      "id": "_hxgev8qun",
+      "datetime": "06/14/2026, 03:58:55 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "email": "testuser2@greenshades.com",
       "type": "Logged In"
-    },
-    {
-      "id": "_ibaxaxigl",
-      "datetime": "06/14/2026, 03:58:13 AM",
-      "user": "Test User2 (testuser2@greenshades.com)",
-      "email": "testuser2@greenshades.com",
-      "type": "New User"
     },
     {
       "id": "_pqhn6i8cf",
@@ -1082,210 +1075,210 @@
       "datetime": "06/14/2026, 03:55:08 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products âº Sync Portal âº Internal Tools"
+      "path": "Products › Sync Portal › Internal Tools"
     },
     {
       "id": "_5fngsxc41",
       "datetime": "06/14/2026, 03:55:06 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products âº Sync Portal âº Internal Tools"
+      "path": "Products › Sync Portal › Internal Tools"
     },
     {
       "id": "_negbjxkwg",
       "datetime": "06/14/2026, 03:54:52 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products âº Sync Portal âº Internal Tools"
+      "path": "Products › Sync Portal › Internal Tools"
     },
     {
       "id": "_xlc0gnw7u",
       "datetime": "06/14/2026, 03:43:29 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products âº Sync Portal âº Internal Tools"
+      "path": "Products › Sync Portal › Internal Tools"
     },
     {
       "id": "_pxtmcr1c2",
       "datetime": "06/14/2026, 03:29:08 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂ¢ÃÂÃÂº Sync Portal ÃÂ¢ÃÂÃÂº Internal Tools"
     },
     {
       "id": "_yw1su99np",
       "datetime": "06/14/2026, 03:28:23 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂ¢ÃÂÃÂº Sync Portal ÃÂ¢ÃÂÃÂº Internal Tools"
     },
     {
       "id": "_f41s7ar08",
       "datetime": "06/14/2026, 03:24:31 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂ¢ÃÂÃÂº Sync Portal ÃÂ¢ÃÂÃÂº Internal Tools"
     },
     {
       "id": "_7lhyl0zjj",
       "datetime": "06/14/2026, 03:23:42 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂ¢ÃÂÃÂº Sync Portal ÃÂ¢ÃÂÃÂº Internal Tools"
     },
     {
       "id": "_ciu5rtvj8",
       "datetime": "06/14/2026, 02:59:31 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Impersonate an Admin",
-      "path": "General ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_vjm8sb01c",
       "datetime": "06/14/2026, 02:49:40 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Impersonate an Admin",
-      "path": "General ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_5oqews215",
       "datetime": "06/14/2026, 02:32:29 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_qqvfqsvjp",
       "datetime": "06/14/2026, 02:32:17 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_vcsxfl2sn",
       "datetime": "06/14/2026, 02:32:06 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_oe57k194k",
       "datetime": "06/14/2026, 02:31:59 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_isxd9crs9",
       "datetime": "06/14/2026, 02:31:55 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_38cmjwy4p",
       "datetime": "06/14/2026, 02:31:50 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_g7eancdb5",
       "datetime": "06/14/2026, 02:31:44 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
       "item": "Sync Start Date",
-      "path": "Products ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
+      "path": "Products ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂ¢ÃÂÃÂÃÂÃÂº Configurable Settings"
     },
     {
       "id": "_3alutt91f",
       "datetime": "06/14/2026, 02:10:43 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "Payroll Migration Tool",
-      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "Products ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_0zqvay3cf",
       "datetime": "06/14/2026, 01:57:00 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_nc17zaymq",
       "datetime": "06/14/2026, 01:47:13 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_gun3f2xkh",
       "datetime": "06/14/2026, 01:47:13 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Impersonate an Admin",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_cyyqnwa2o",
       "datetime": "06/14/2026, 01:45:41 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_9p7b4sags",
       "datetime": "06/14/2026, 01:45:25 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_gndgza57k",
       "datetime": "06/14/2026, 01:44:30 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_nyksv0zqf",
       "datetime": "06/14/2026, 01:44:29 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "View a Workspace",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_b2vm9qzn0",
       "datetime": "06/14/2026, 01:44:28 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Impersonate an Admin",
-      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
+      "path": "General ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Internal Tools"
     },
     {
       "id": "_pkzi1ybv5",
       "datetime": "06/14/2026, 01:43:08 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Sync Start Date",
-      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
+      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
     },
     {
       "id": "_8t3c7fn5n",
       "datetime": "06/14/2026, 01:41:33 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Sync Start Date",
-      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
+      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
     },
     {
       "id": "_ffe6olt2m",
       "datetime": "06/14/2026, 01:40:12 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Sync Start Date",
-      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
+      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
     },
     {
       "id": "_jc1xylk37",
       "datetime": "06/14/2026, 01:37:04 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
       "item": "Sync Start Date",
-      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
+      "path": "Products ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Sync Portal ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ¢ÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂº Configurable Settings"
     }
   ],
   "automationLogs": [
@@ -1311,17 +1304,6 @@
     }
   ],
   "roleLogs": [
-    {
-      "id": "_118dh3kub",
-      "datetime": "06/14/2026, 03:58:13 AM",
-      "name": "Test User2",
-      "email": "testuser2@greenshades.com",
-      "department": "Support",
-      "permissions": "general",
-      "updatedBy": "System",
-      "reason": "New User",
-      "type": "Added"
-    },
     {
       "id": "_sbvt0zes3",
       "datetime": "06/14/2026, 03:54:47 AM",
@@ -1372,7 +1354,7 @@
       "id": "_k3bf2xbpr",
       "name": "Support",
       "classMapping": "Restricted",
-      "userCount": 3
+      "userCount": 2
     },
     {
       "id": "_uwsf6bsxu",
@@ -1418,7 +1400,7 @@
       "mustChangePw": false
     },
     {
-      "id": "_qfevebt6w",
+      "id": "_2f8x4x8kq",
       "email": "testuser2@greenshades.com",
       "nameFirst": "Test",
       "nameLast": "User2",
@@ -1429,7 +1411,16 @@
       ],
       "firstLogin": false,
       "mustChangePw": false,
-      "createdAt": "06/14/2026, 03:57:34 AM"
+      "createdAt": "06/14/2026, 03:54:31 AM",
+      "favorites": [
+        {
+          "l1Id": "_spoi3po35",
+          "l2Id": "_ow7oykhmg",
+          "secId": "_rr7buugym",
+          "itemId": "_aacdf5x77",
+          "title": "Payroll Migration Tool"
+        }
+      ]
     }
   ],
   "passwords": {
