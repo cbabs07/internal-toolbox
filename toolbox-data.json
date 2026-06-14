@@ -943,6 +943,13 @@
   ],
   "loginLogs": [
     {
+      "id": "_zgj7tpnzc",
+      "datetime": "06/14/2026, 04:00:21 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "email": "cbabcock@greenshades.com",
+      "type": "Logged In"
+    },
+    {
       "id": "_hxgev8qun",
       "datetime": "06/14/2026, 03:58:55 AM",
       "user": "Test User2 (testuser2@greenshades.com)",
