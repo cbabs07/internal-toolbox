@@ -878,6 +878,13 @@
   ],
   "loginLogs": [
     {
+      "id": "_l8gdqowfa",
+      "datetime": "06/14/2026, 01:49:11 AM",
+      "user": "testuser1@greenshades.com",
+      "email": "testuser1@greenshades.com",
+      "type": "New User"
+    },
+    {
       "id": "_5kxs3t2t7",
       "datetime": "06/14/2026, 01:48:54 AM",
       "user": "testuser1@greenshades.com",
