@@ -878,6 +878,13 @@
   ],
   "loginLogs": [
     {
+      "id": "_5kxs3t2t7",
+      "datetime": "06/14/2026, 01:48:54 AM",
+      "user": "testuser1@greenshades.com",
+      "email": "testuser1@greenshades.com",
+      "type": "New User"
+    },
+    {
       "id": "_ie631fu01",
       "datetime": "06/14/2026, 01:35:35 AM",
       "user": "Cbabcock  (cbabcock@greenshades.com)",
@@ -1025,6 +1032,20 @@
       "firstLogin": false,
       "createdAt": "06/14/2026, 01:35:25 AM",
       "mustChangePw": false
+    },
+    {
+      "id": "_qk45w7sb0",
+      "email": "testuser1@greenshades.com",
+      "nameFirst": "",
+      "nameLast": "",
+      "dept": "",
+      "pwHash": "020ecc85ac7a31e958560922b6df39c90a047e97137888d50a41f48000829326",
+      "permissions": [
+        "general"
+      ],
+      "firstLogin": true,
+      "createdAt": "06/14/2026, 01:48:54 AM",
+      "mustChangePw": true
     }
   ],
   "passwords": {
