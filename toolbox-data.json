@@ -1008,7 +1008,7 @@
       "id": "_uwsf6bsxu",
       "name": "TPE",
       "classMapping": "Unrestricted",
-      "userCount": 0
+      "userCount": 1
     },
     {
       "id": "_nb50m2piw",
@@ -1033,9 +1033,9 @@
     {
       "id": "_qbfaswt5x",
       "email": "cbabcock@greenshades.com",
-      "nameFirst": "Cbabcock",
-      "nameLast": "",
-      "dept": "",
+      "nameFirst": "Courtney",
+      "nameLast": "Babcock",
+      "dept": "TPE",
       "pwHash": "020ecc85ac7a31e958560922b6df39c90a047e97137888d50a41f48000829326",
       "permissions": [
         "general",
