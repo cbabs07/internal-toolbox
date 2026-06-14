@@ -915,6 +915,13 @@
   ],
   "viewLogs": [
     {
+      "id": "_3alutt91f",
+      "datetime": "06/14/2026, 02:10:43 AM",
+      "user": "Courtney Babcock (cbabcock@greenshades.com)",
+      "item": "Payroll Migration Tool",
+      "path": "Products › Sync Portal › Internal Tools"
+    },
+    {
       "id": "_0zqvay3cf",
       "datetime": "06/14/2026, 01:57:00 AM",
       "user": "Courtney Babcock (cbabcock@greenshades.com)",
@@ -1064,6 +1071,20 @@
     {
       "id": "_qk45w7sb0",
       "email": "testuser1@greenshades.com",
+      "nameFirst": "Test",
+      "nameLast": "User1",
+      "dept": "Support",
+      "pwHash": "020ecc85ac7a31e958560922b6df39c90a047e97137888d50a41f48000829326",
+      "permissions": [
+        "general"
+      ],
+      "firstLogin": true,
+      "createdAt": "06/14/2026, 01:48:54 AM",
+      "mustChangePw": true
+    },
+    {
+      "id": "_377br0y4e",
+      "email": "testuser2@greenshades.com",
       "nameFirst": "",
       "nameLast": "",
       "dept": "",
@@ -1072,8 +1093,8 @@
         "general"
       ],
       "firstLogin": true,
-      "createdAt": "06/14/2026, 01:48:54 AM",
-      "mustChangePw": true
+      "mustChangePw": true,
+      "createdAt": "06/14/2026, 02:23:53 AM"
     }
   ],
   "passwords": {
